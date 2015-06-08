@@ -33,6 +33,7 @@
 					<li><a href="https://github.com/hybridauth/hybridauth/releases" target="_blank">Download</a></li> 
 					<li><a href="./documentation.html">Documentation</a></li>
 					<li><a href="./getinvolved.html">Get involved</a></li> 
+                    <li><a href="./support.html">Support</a></li> 
 					<li style="margin-right:10px">
 						<form action="./search.html" method="get">
 							<input type="text" name="q" class="search-input" placeholder="Search">
@@ -52,9 +53,11 @@
 
 <h1>User Contacts</h1>
 
-<p><strong>Important :</strong> Currently only <strong>Facebook, Twitter, Identica, LinkedIn, QQ, Sina, Murmur, Pixnet and Plurk</strong> do support this feature. Others providers will throw an exception (#8 "Provider does not support this feature"), when <code>getUserContacts()</code> is called. Please refer to the user guide to know more about each adapters capabilities.</p>
+<p><strong>Important</strong> Currently only Facebook, Twitter and LinkedIn do support this feature. Others providers will throw an
+exception (<code>NotImplementedException</code>: Provider does not support this feature), when <code>getUserContacts()</code> is called.</p>
 
-<p>Same with the user's profile, after authenfication, HybridAuth can provide the connected user contact list's in a rich, simple and <strong>standardized structur</strong> across all the social APIs.</p>
+<p>Same with the user's profile, after authentication, HybridAuth can provide the connected user contact list's in a rich,
+simple and <strong>standardized structure</strong> across all the social APIs.</p>
 
 <p><strong>Sample :</strong></p>
 
@@ -91,7 +94,7 @@ foreach( $userContacts as $contact ){
 <tr>
   <td>identifier</td>
   <td>String</td>
-  <td>The Unique contact's ID on the connected provider. Usually an interger.</td>
+  <td>The Unique contact's ID on the connected provider. Usually an integer.</td>
 </tr>
 <tr>
   <td>profileURL</td>
@@ -121,14 +124,14 @@ foreach( $userContacts as $contact ){
 <tr>
   <td>email</td>
   <td>String</td>
-  <td>User email. <em>Not all of IDp garant access to the user email</em></td>
+  <td>User email. <em>Not all of IDp grant access to the user email</em></td>
 </tr>
 </tbody>
 </table>
 
 
 <!-- ... -->
-
+<!--
                 <hr />
                 <br />
                 <a name="comments"></a>
@@ -152,7 +155,7 @@ foreach( $userContacts as $contact ){
                         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                     })();
                 </script>
-
+-->
                 <br />
             </div>
         </div>
@@ -166,6 +169,7 @@ foreach( $userContacts as $contact ){
 					<li><a href="https://github.com/hybridauth/hybridauth/releases" target="_blank">Download</a></li> 
 					<li><a href="./documentation.html">Documentation</a></li>
 					<li><a href="./getinvolved.html">Get involved</a></li> 
+                    <li><a href="./support.html">Support</a></li> 
                     <li><a href="./license.html">License</a></li> 
                     &mdash;
 					<li><a href="https://github.com/hybridauth/hybridauth" target="_blank">Github</a></li> 

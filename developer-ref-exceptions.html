@@ -33,6 +33,7 @@
 					<li><a href="https://github.com/hybridauth/hybridauth/releases" target="_blank">Download</a></li> 
 					<li><a href="./documentation.html">Documentation</a></li>
 					<li><a href="./getinvolved.html">Get involved</a></li> 
+                    <li><a href="./support.html">Support</a></li> 
 					<li style="margin-right:10px">
 						<form action="./search.html" method="get">
 							<input type="text" name="q" class="search-input" placeholder="Search">
@@ -50,11 +51,148 @@
 
 <!-- ... -->
 
+<h1>Exceptions Handling</h1>
 
+<p>Hybridauth uses exceptions extensively and it's important that these exceptions be properly caught/handled in your code.</p>
+
+<p>Below a list of exceptions that Hybridauth may throw at you in case something goes wrong:</p>
+
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+  <th><strong>Exception Name</strong></th>
+  <th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>Exception</code></td>
+  <td>Exception is the base class for all Exceptions.</td>
+</tr>
+<tr>
+  <td><code>RuntimeException</code></td>
+  <td>Exception thrown if an error which can only be found on runtime occurs.</td>
+</tr>
+<tr>
+  <td><code>InvalidArgumentException</code></td>
+  <td>Exception thrown if an argument is not of the expected type.</td>
+</tr>
+<tr>
+  <td><code>UnexpectedValueException</code></td>
+  <td>Exception thrown if a value does not match with a set of values.</td>
+</tr>
+<tr>
+  <td><code>BadMethodCallException</code></td>
+  <td>Exception thrown if a callback refers to an undefined method or if some arguments are missing.</td>
+</tr>
+<tr>
+  <td><code>NotImplementedException</code></td>
+  <td>Exception thrown when a requested method or operation is not implemented.</td>
+</tr>
+<tr>
+  <td><code>InvalidApplicationCredentialsException</code></td>
+  <td>Exception thrown when your application key and secret are not setup correctly</td>
+</tr>
+<tr>
+  <td><code>InvalidAuthorizationCodeException</code></td>
+  <td>Exception thrown when an OAuth2 authentication request fails due to a missing, invalid, or mismatching redirection URI, or if the client identifier is missing or invalid.</td>
+</tr>
+<tr>
+  <td><code>InvalidAuthorizationStateException</code></td>
+  <td>Exception thrown when an OAuth2 authorization state is either invalid or has been used.</td>
+</tr>
+<tr>
+  <td><code>InvalidAccessTokenException</code></td>
+  <td>Exception thrown when an OAuth1 <code>access_token</code> is invalid.</td>
+</tr>
+<tr>
+  <td><code>InvalidOauthTokenException</code></td>
+  <td>Exception thrown when an OAuth1 <code>oauth_token</code> is invalid.</td>
+</tr>
+<tr>
+  <td><code>InvalidOpenidIdentifierException</code></td>
+  <td>Exception thrown when an OpenID identifier <code>openid_identifier</code> was not setup correctly.</td>
+</tr>
+<tr>
+  <td><code>HttpClientFailureException</code></td>
+  <td>Exception thrown when the curl http client returns an errors. Typically happen due to networks issues or server configuration.</td>
+</tr>
+<tr>
+  <td><code>HttpRequestFailedException</code></td>
+  <td>Exception thrown when a requested URL returns an errors. This usually happen when requesting a wrong URI or a protected resource without providing a valid access token.</td>
+</tr>
+<tr>
+  <td><code>AuthorizationDeniedException</code></td>
+  <td>Exception thrown when a user deny the authentication/authorization request.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Exceptions Class Tree:</strong></p>
+
+<pre class="prettyprint linenums">    ExceptionInterface
+    Exception                                             extends \Exception implements ExceptionInterface
+    |   RuntimeException                                  extends Exception
+    |   |    UnexpectedValueException                     extends RuntimeException
+    |   |    |    AuthorizationDeniedException            extends UnexpectedValueException
+    |   |    |    HttpClientFailureException              extends UnexpectedValueException
+    |   |    |    HttpRequestFailedException              extends UnexpectedValueException
+    |   |    |    InvalidAuthorizationCodeException       extends UnexpectedValueException
+    |   |    |    InvalidAuthorizationStateException      extends UnexpectedValueException
+    |   |    |    InvalidOauthTokenException              extends UnexpectedValueException
+    |   |    |    InvalidAccessTokenException             extends UnexpectedValueException
+    |   |
+    |   |    BadMethodCallException                       extends RuntimeException
+    |   |    |   NotImplementedException                  extends BadMethodCallException  
+    |   |
+    |   |    InvalidArgumentException                     extends RuntimeException
+    |   |    |   InvalidApplicationCredentialsException   extends InvalidArgumentException
+    |   |    |   InvalidOpenidIdentifierException         extends InvalidArgumentException
+</pre>
+
+<p><strong>Example:</strong></p>
+
+<pre class="prettyprint linenums">try {
+    $github = new Hybridauth\Provider\GitHub($config);
+
+    $github-&gt;authenticate();
+    $github-&gt;getUserProfile();
+}
+
+/**
+* Catch Curl Errors
+*
+* This kind of error may happen when:
+*     - Internet or Networks issues.
+*     - Your server configuration is not setup correctly.
+* The full list of curl errors that may happen can be found at http://curl.haxx.se/libcurl/c/libcurl-errors.html
+*/
+catch (Hybridauth\Exception\HttpClientFailureException $e) {
+    echo 'Curl text error message : ' . $github-&gt;getHttpClient()-&gt;getResponseClientError();
+}
+
+/**
+* Catch API Requests Errors
+*
+* This usually happen when requesting a:
+*     - Wrong URI or a mal-formatted http request.
+*     - Protected resource without providing a valid access token.
+*/
+catch (Hybridauth\Exception\HttpRequestFailedException $e) {
+    echo 'Raw API Response: ' . $github-&gt;getHttpClient()-&gt;getResponseBody();
+}
+
+/**
+* This fellow will catch everything else
+*/
+catch (\Exception $e) {
+    echo 'Oops! We ran into an unknown issue: ' . $e-&gt;getMessage();
+}
+</pre>
 
 
 <!-- ... -->
-
+<!--
                 <hr />
                 <br />
                 <a name="comments"></a>
@@ -78,7 +216,7 @@
                         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                     })();
                 </script>
-
+-->
                 <br />
             </div>
         </div>
@@ -92,6 +230,7 @@
 					<li><a href="https://github.com/hybridauth/hybridauth/releases" target="_blank">Download</a></li> 
 					<li><a href="./documentation.html">Documentation</a></li>
 					<li><a href="./getinvolved.html">Get involved</a></li> 
+                    <li><a href="./support.html">Support</a></li> 
                     <li><a href="./license.html">License</a></li> 
                     &mdash;
 					<li><a href="https://github.com/hybridauth/hybridauth" target="_blank">Github</a></li> 

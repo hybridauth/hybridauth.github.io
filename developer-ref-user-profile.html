@@ -33,6 +33,7 @@
 					<li><a href="https://github.com/hybridauth/hybridauth/releases" target="_blank">Download</a></li> 
 					<li><a href="./documentation.html">Documentation</a></li>
 					<li><a href="./getinvolved.html">Get involved</a></li> 
+                    <li><a href="./support.html">Support</a></li> 
 					<li style="margin-right:10px">
 						<form action="./search.html" method="get">
 							<input type="text" name="q" class="search-input" placeholder="Search">
@@ -52,18 +53,20 @@
 
 <h1>User profile</h1>
 
-<p>After authentication, HybridAuth provide the connected user profile's in a rich, simple and <strong>standardized structure</strong> across all the social APIs.</p>
+<p>After authentication, HybridAuth provide the connected user profile's in a rich, simple and <strong>standardized structure</strong>
+across all the social APIs.</p>
 
 <p>Also, keep in mind that not all social APIs will provide all the user data to third-party.</p>
 
-<p>The <code>Hybridauth\User\Profile</code> object will be populated with as much information about the user as HybridAuth was able to pull from the given API or authentication provider.</p>
+<p>The <code>Hybridauth\User\Profile</code> object will be populated with as much information about the user as HybridAuth was able
+to pull from the given API or authentication provider.</p>
 
 <p><strong>Sample :</strong></p>
 
 <pre class="prettyprint linenums">// Instantiate Github Adapter
 $github = new Hybridauth\Provider\GitHub($config);
 
-// Aauthenticate with the user
+// Authenticate with the user
 $github-&gt;authenticate();
 
 // Retrieve Users Profiles
@@ -74,7 +77,8 @@ echo 'Hi '.$userProfile-&gt;displayName;
 
 <h3>Class Hybridauth\User\Profile</h3>
 
-<p>It represents the current logged in user profile. list of fields available in the normalized user profile structure used by HybridAuth.</p>
+<p>It represents the current logged in user profile. list of fields available in the normalized user profile structure used by
+HybridAuth.</p>
 
 <p><strong>Data Members :</strong></p>
 
@@ -202,7 +206,7 @@ echo 'Hi '.$userProfile-&gt;displayName;
 
 
 <!-- ... -->
-
+<!--
                 <hr />
                 <br />
                 <a name="comments"></a>
@@ -226,7 +230,7 @@ echo 'Hi '.$userProfile-&gt;displayName;
                         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                     })();
                 </script>
-
+-->
                 <br />
             </div>
         </div>
@@ -240,6 +244,7 @@ echo 'Hi '.$userProfile-&gt;displayName;
 					<li><a href="https://github.com/hybridauth/hybridauth/releases" target="_blank">Download</a></li> 
 					<li><a href="./documentation.html">Documentation</a></li>
 					<li><a href="./getinvolved.html">Get involved</a></li> 
+                    <li><a href="./support.html">Support</a></li> 
                     <li><a href="./license.html">License</a></li> 
                     &mdash;
 					<li><a href="https://github.com/hybridauth/hybridauth" target="_blank">Github</a></li> 

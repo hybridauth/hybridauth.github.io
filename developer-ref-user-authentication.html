@@ -33,6 +33,7 @@
 					<li><a href="https://github.com/hybridauth/hybridauth/releases" target="_blank">Download</a></li> 
 					<li><a href="./documentation.html">Documentation</a></li>
 					<li><a href="./getinvolved.html">Get involved</a></li> 
+                    <li><a href="./support.html">Support</a></li> 
 					<li style="margin-right:10px">
 						<form action="./search.html" method="get">
 							<input type="text" name="q" class="search-input" placeholder="Search">
@@ -52,7 +53,7 @@
 
 <h1>User authentication</h1>
 
-<h3>New way of doing things :</h3>
+<h3>Simple authentication:</h3>
 
 <pre class="prettyprint linenums">/**
 * 1. Require the Hybridauth Library
@@ -64,19 +65,12 @@
 include 'vendor/autoload.php'; // or include 'examples/hybridauth_autoload.php';
 
 /**
-* 2. Configuring your application
-*
-* Set the Authorization callback URL to http://example.com/hybridauth/examples/twitter.php.
-* Understandably, you need to replace 'path/to/hybridauth' with the real path to this
-* script.
+* 2. Build the adapter configuration array
 */
 $config = [
-    'callback' =&gt; 'http://example.com/hybridauth/examples/twitter.php',
+    'callback' =&gt; 'http://example.com/hybridauth/example.php',
 
-    'keys' =&gt; [
-        'key'    =&gt; 'your-consumer-key',
-        'secret' =&gt; 'your-consumer-secret'
-    ]
+    'keys' =&gt; [ 'key' =&gt; 'your-twitter-consumer-key', 'secret' =&gt; 'your-twitter-consumer-secret' ]
 ];
 
 /**
@@ -100,25 +94,11 @@ try {
     # the examples below are meant to give a quick overview for the kind actions that Hybridauth can execute
     # on behalf on the user.
 
-    /**
-    * 5. Retrieve the oauth access tokens
-    */
+    // Retrieve the oauth access tokens
     $accessToken = $twitter-&gt;getAccessToken();
 
-    /**
-    * 6. Retrieve the user profile
-    */
+    // Retrieve the user profile
     $userProfile = $twitter-&gt;getUserProfile();
-
-    /**
-    * 7. Retrieve the user contacts
-    */
-    $userContacts = $twitter-&gt;getUserContacts();
-
-    /**
-    * 8. Retrieve the user timeline
-    */
-    $apiResponse = $twitter-&gt;apiRequest( 'statuses/home_timeline.json' );
 
     // etc.
 }
@@ -127,41 +107,17 @@ catch( Exception $e ){
 }
 </pre>
 
-<p><strong>Note:</strong> Optionally you may redefine the providers api end-points.</p>
+<h3>Authenticating a user with access tokens</h3>
+
+<p>Since Hybridauth 3 it's possible to directly authenticate a user with the access token.</p>
 
 <pre class="prettyprint linenums">$config = [
-    'callback' =&gt; 'http://example.com/hybridauth/examples/twitter.php',
+    'callback' =&gt; 'http://localhost/hybridauth/example.php',
 
-    'keys' =&gt; [
-        'key'    =&gt; 'your-consumer-key',
-        'secret' =&gt; 'your-consumer-secret'
-    ],
+    'keys' =&gt; [ 'key' =&gt; 'your-twitter-consumer-key', 'secret' =&gt; 'your-twitter-consumer-secret' ],
 
-    // Optional: Redefine providers endpoints
-    'endpoints' =&gt; [
-        'api_base_url'      =&gt; 'https://api.twitter.com/1.1/',
-        'authorize_url'     =&gt; 'https://api.twitter.com/oauth/authenticate',
-        'request_token_url' =&gt; 'https://api.twitter.com/oauth/request_token',
-        'access_token_url'  =&gt; 'https://api.twitter.com/oauth/access_token',
-    ]
-];
-</pre>
-
-<h3>Authenticating a user with a pair of access tokens</h3>
-
-<pre class="prettyprint linenums">$config = [
-    'callback' =&gt; 'http://localhost/hybridauth/examples/twitter.php',
-
-    'keys' =&gt; [
-        'key'    =&gt; 'your-consumer-key',
-        'secret' =&gt; 'your-consumer-secret'
-    ],
-
-    // Supply the twitter access tokens for the current user
-    'tokens' =&gt; [
-        'access_token'        =&gt; 'your-access-token',
-        'access_token_secret' =&gt; 'your-access-token-secret',
-    ]
+    // Supply the user access tokens
+    'tokens' =&gt; [ 'access_token' =&gt; 'user-access-token', 'access_token_secret' =&gt; 'user-access-token-secret' ]
 ];
 
 $twitter = new Hybridauth\Provider\Twitter( $config );
@@ -181,31 +137,44 @@ catch( Exception $e ){
 }
 </pre>
 
-<h3>Legacy way (Similar to Hybridauth 2.x)</h3>
+<h3>Legacy way (Similar to Hybridauth 2)</h3>
 
-<p><strong>Note:</strong> Please refer to <a href="developer-ref-migrating.html">Migrating to 3.0+</a> to make the necessary changes to your existing application in order to make it work with HybridAuth 3.x.</p>
+<p>Hybridauth 3 provides an unified entry point to the various providers it supports which make it easy to authenticate users
+with multiple providers.</p>
 
-<pre class="prettyprint linenums">// 
-$config = array(
-    'base_url'  =&gt; 'http://localhost/hybridauth/examples/callback.php',
+<p><strong>Note:</strong> If you were using Hybridauth 2, please refer to <a href="developer-ref-migrating.html">Migrating to 3.0+</a> to make the
+necessary changes to your existing application in order to make it work with HybridAuth 3.</p>
 
-    'providers' =&gt; array(
-        'GitHub' =&gt; array(
+<pre class="prettyprint linenums">$config = [
+    'base_url'  =&gt; 'http://localhost/hybridauth/callback.php',
+
+    'providers' =&gt; [
+        'Twitter' =&gt; [
             'enabled' =&gt; true,
-            'keys'    =&gt; array ( 'id' =&gt; '', 'secret' =&gt; '' ),
-        )
-    )
-);
+            'keys'    =&gt; [ 'key' =&gt; 'your-twitter-consumer-key', 'secret' =&gt; 'your-twitter-consumer-secret' ],
+        ]
+        'GitHub' =&gt; [
+            'enabled' =&gt; true,
+            'keys'    =&gt; [ 'id' =&gt; 'your-github-application-id', 'secret' =&gt; 'your-github-application-secret' ],
+        ]
+    ]
+];
 
-// 
-$hybridauth = new Hybridauth( $config );
+// Instantiate Hybridauth main class with the config array
+$hybridauth = new Hybridauth\Hybridauth( $config );
 
 try{
-    //
+    // Authenticate with GitHub
     $github = $hybridauth-&gt;authenticate( "GitHub" );
 
-    // 
-    $user_profile = $github-&gt;getUserProfile();
+    // Retrieve the user github profile
+    $userProfile = $github-&gt;getUserProfile();
+
+    // Authenticate with Twitter
+    $twitter = $hybridauth-&gt;authenticate( "Twitter" );
+
+    // Retrieve the user twitter profile
+    $userProfile = $twitter-&gt;getUserProfile();
 }
 catch( Exception $e ){
     echo "Oops, we ran into an issue! " . $e-&gt;getMessage();
@@ -214,7 +183,7 @@ catch( Exception $e ){
 
 
 <!-- ... -->
-
+<!--
                 <hr />
                 <br />
                 <a name="comments"></a>
@@ -238,7 +207,7 @@ catch( Exception $e ){
                         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                     })();
                 </script>
-
+-->
                 <br />
             </div>
         </div>
@@ -252,6 +221,7 @@ catch( Exception $e ){
 					<li><a href="https://github.com/hybridauth/hybridauth/releases" target="_blank">Download</a></li> 
 					<li><a href="./documentation.html">Documentation</a></li>
 					<li><a href="./getinvolved.html">Get involved</a></li> 
+                    <li><a href="./support.html">Support</a></li> 
                     <li><a href="./license.html">License</a></li> 
                     &mdash;
 					<li><a href="https://github.com/hybridauth/hybridauth" target="_blank">Github</a></li> 

@@ -33,6 +33,7 @@
 					<li><a href="https://github.com/hybridauth/hybridauth/releases" target="_blank">Download</a></li> 
 					<li><a href="./documentation.html">Documentation</a></li>
 					<li><a href="./getinvolved.html">Get involved</a></li> 
+                    <li><a href="./support.html">Support</a></li> 
 					<li style="margin-right:10px">
 						<form action="./search.html" method="get">
 							<input type="text" name="q" class="search-input" placeholder="Search">
@@ -52,14 +53,15 @@
 
 <h1>Update User Status</h1>
 
-<p><strong>Important</strong> Currently only Facebook, Twitter, Identica, LinkedIn, QQ, Sina, Murmur, Pixnet and Plurkg do support this feature. Others providers will throw an exception (#8 "Provider does not support this feature"), when <code>setUserStatus()</code> is called. Please refer to the user guide to know more about each adapters capabilities.</p>
+<p><strong>Important</strong> Currently only Facebook, Twitter and LinkedIn do support this feature. Others providers will throw an
+exception (<code>NotImplementedException</code>: Provider does not support this feature), when <code>setUserStatus()</code> is called.</p>
 
 <p><strong>Twitter example :</strong></p>
 
 <pre class="prettyprint linenums">// Instantiate Twitter Adapter
 $twitter = new Hybridauth\Provider\Twitter($config);
 
-// Aauthenticate with the user
+// Authenticate with the user
 $twitter-&gt;authenticate();
 
 // Update the user status
@@ -68,30 +70,27 @@ $twitter-&gt;setUserStatus( "Hello world!" );
 
 <p><strong>Facebook example :</strong></p>
 
-<p><em>Note:</em> For Facebook we can add even more information to the user update:</p>
+<p>Facebook supports few extra parameters when posting a new user status :</p>
 
 <pre class="prettyprint linenums">// Instantiate Facebook Adapter
-$facebook = new Hybridauth\Provider\Twitter($config);
+$facebook = new Hybridauth\Provider\Facebook($config);
 
-// Aauthenticate with the user
+// Authenticate with the user
 $facebook-&gt;authenticate();
 
 // Update the user status
-$twitter-&gt;setUserStatus
-(
-    array
-    (
+$twitter-&gt;setUserStatus(
+    array(
         'message' =&gt; 'Hello world!',
-        'link"    =&gt; 'https://example.com/link/to/page',
+        'link'    =&gt; 'https://example.com/link/to/page',
         'picture' =&gt; 'https://example.com/link/to/picture.jpg'
-        )
     )
 );
 </pre>
 
 
 <!-- ... -->
-
+<!--
                 <hr />
                 <br />
                 <a name="comments"></a>
@@ -115,7 +114,7 @@ $twitter-&gt;setUserStatus
                         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                     })();
                 </script>
-
+-->
                 <br />
             </div>
         </div>
@@ -129,6 +128,7 @@ $twitter-&gt;setUserStatus
 					<li><a href="https://github.com/hybridauth/hybridauth/releases" target="_blank">Download</a></li> 
 					<li><a href="./documentation.html">Documentation</a></li>
 					<li><a href="./getinvolved.html">Get involved</a></li> 
+                    <li><a href="./support.html">Support</a></li> 
                     <li><a href="./license.html">License</a></li> 
                     &mdash;
 					<li><a href="https://github.com/hybridauth/hybridauth" target="_blank">Github</a></li> 
