@@ -1,7 +1,7 @@
 Configuration
 =============
 
-```php
+<pre>
 $config = [
     'callback' => HttpClient\Util::getCurrentUrl(),
 
@@ -111,4 +111,4 @@ $config = [
         // etc..
     ],
 ];
-```
+</pre>

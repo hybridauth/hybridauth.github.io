@@ -9,7 +9,7 @@ HybridAuth was able to pull from the given API or authentication provider.
 
 **Sample :**
 
-```php
+<pre>
 //Instantiate Github Adapter
 $github = new Hybridauth\Provider\GitHub($config);
 
@@ -21,7 +21,7 @@ $userProfile = $github->getUserProfile(); //Returns an instance of class Hybrida
 
 //Access User's dispaly name
 echo 'Hi ' . $userProfile->displayName;
-```
+</pre>
 
 ### Class Hybridauth\User\Profile
 

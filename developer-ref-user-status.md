@@ -7,7 +7,7 @@ exception (`NotImplementedException`: Provider does not support this feature), w
 
 **Twitter example :**
 
-```php
+<pre>
 // Instantiate Twitter Adapter
 $twitter = new Hybridauth\Provider\Twitter($config);
 
@@ -16,14 +16,14 @@ $twitter->authenticate();
 
 // Update the user status
 $twitter->setUserStatus( "Hello world!" );
-```
+</pre>
 
 
 **Facebook example :**
 
 Facebook supports few extra parameters when posting a new user status :
 
-```php
+<pre>
 // Instantiate Facebook Adapter
 $facebook = new Hybridauth\Provider\Facebook($config);
 
@@ -38,4 +38,4 @@ $twitter->setUserStatus(
         'picture' => 'https://example.com/link/to/picture.jpg'
     )
 );
-```
+</pre>

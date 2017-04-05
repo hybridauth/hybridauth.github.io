@@ -9,7 +9,7 @@ To know more about providers capabilities, refer to [Supported Providers](provid
 
 **Usage :**
 
-```php
+<pre>
 //Instantiate Twitter Adapter
 $twitter = new Hybridauth\Provider\Twitter($config);
 
@@ -23,7 +23,7 @@ $timeline = $adapter->getUserActivity('me'); //Returns an array of Hybridauth\Us
 foreach($timeline as $item){
     echo $item->user->displayName . ': ' . $item->text . "\n";
 }
-```
+</pre>
 
 
 ### Class Hybridauth\User\Activity

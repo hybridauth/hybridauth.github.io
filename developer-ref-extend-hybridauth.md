@@ -4,7 +4,7 @@
 
 OpenID providers are still the same and they are the most easy ones: in most cases we just set $openidIdentifier and that's it.
 
-```php
+<pre>
 namespace Hybridauth\Provider;
 
 use Hybridauth\Adapter\OpenID;
@@ -13,7 +13,7 @@ final class StackoverflowOpenID extends OpenID
 {
     protected $openidIdentifier = 'https://openid.stackexchange.com/';
 }
-```
+</pre>
 
 ## 2. OAuth 2
 
@@ -22,7 +22,7 @@ final class StackoverflowOpenID extends OpenID
 Subclasses (i.e., providers adapters) can either use the already provided methods by the new OAuth2 class, override them,
 or create new ones when needed.
 
-```php
+<pre>
 namespace Hybridauth\Provider;
 
 use Hybridauth\Adapter\OAuth2;
@@ -119,13 +119,13 @@ final class MyCustomProvider extends OAuth2
 
     //..
 }
-```
+</pre>
 
 ## 3. OAuth 1
 
 OAuth 1 is very similar to OAuth 2. Subclasses can set the default provider endpoints and settings.
 
-```php
+<pre>
 namespace Hybridauth\Provider;
 
 use Hybridauth\Adapter\OAuth1;
@@ -177,4 +177,4 @@ final class MyCustomProvider extends OAuth1
 
     //..
 }
-```
+</pre>

@@ -5,7 +5,7 @@ To sign in user with a provider, it's possible to either instanciate the provide
 
 ### Instantiating Provider's Adapter
 
-```php
+<pre>
 include 'vendor/autoload.php'; 
 
 $config = [
@@ -25,11 +25,11 @@ try {
 catch( Exception $e ){
     echo 'Ooophs, we ran into an issue! '' . $e->getMessage();
 }
-```
+</pre>
 
 ### Unified Interface
 
-```php
+<pre>
 include 'vendor/autoload.php'; 
 
 $config = [
@@ -52,4 +52,4 @@ try{
 catch(Exception $e){
     echo 'Ooophs, we ran into an issue! '' . $e->getMessage();
 }
-```
+</pre>

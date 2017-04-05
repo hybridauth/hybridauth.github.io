@@ -3,7 +3,7 @@ User authentication
 
 ### Simple authentication:
 
-```php
+<pre>
 /**
 * 2. Build the adapter configuration array
 */
@@ -45,13 +45,13 @@ try {
 catch( Exception $e ){
     echo 'Oops, we ran into an issue! ' . $e->getMessage();
 }
-```
+</pre>
 
 ### Authenticating a user with access tokens
 
 Since Hybridauth 3 it's possible to directly authenticate a user with the access token.
 
-```php
+<pre>
 $config = [
     'callback' => 'http://localhost/hybridauth/example.php',
 
@@ -76,7 +76,7 @@ try {
 catch( Exception $e ){
     echo 'Oops, we ran into an issue! ' . $e->getMessage();
 }
-```
+</pre>
 
 ### Legacy way (Similar to Hybridauth 2)
 
@@ -87,7 +87,7 @@ with multiple providers.
 **Note:** If you were using Hybridauth 2, please refer to [Migrating to 3.0+](developer-ref-migrating.html) to make the
 necessary changes to your existing application in order to make it work with HybridAuth 3.
 
-```php
+<pre>
 $config = [
     'base_url'  => 'http://localhost/hybridauth/callback.php',
 
@@ -110,4 +110,4 @@ try{
 catch( Exception $e ){
     echo 'Oops, we ran into an issue! ' . $e->getMessage();
 }
-```
+</pre>

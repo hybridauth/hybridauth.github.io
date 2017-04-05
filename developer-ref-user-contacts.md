@@ -9,7 +9,7 @@ To know more about providers capabilities, refer to [Supported Providers](provid
 
 **Usage :**
 
-```php
+<pre>
 //Instantiate Google Adapter
 $google = new Hybridauth\Provider\Google($config);
 
@@ -23,7 +23,7 @@ $userContacts = $google->getUserContatcs(); //Returns an array of Hybridauth\Use
 foreach( $userContacts as $contact ){
 	echo $contact->displayName . ' ' . $contact->profileURL . "\n";
 }
-```
+</pre>
 
 
 ### Class Hybridauth\User\Contact

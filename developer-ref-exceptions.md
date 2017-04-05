@@ -5,7 +5,7 @@ Hybridauth uses exceptions extensively and it's important that these exceptions 
 
 **Example:**
 
-```php
+<pre>
 try {
     $github = new Hybridauth\Provider\GitHub($config);
     
@@ -42,12 +42,12 @@ catch (Hybridauth\Exception\HttpRequestFailedException $e) {
 catch (\Exception $e) {
     echo 'Oops! We ran into an unknown issue: ' . $e->getMessage();
 }
-```
+</pre>
 
 <br />
 **Exceptions Inheritance Tree:**
 
-```
+<pre>
 Exception
 |   RuntimeException
 |   |    UnexpectedValueException
@@ -66,7 +66,7 @@ Exception
 |   |    InvalidArgumentException
 |   |    |   InvalidApplicationCredentialsException
 |   |    |   InvalidOpenidIdentifierException
-```
+</pre>
 
 <br />
 **Exceptions description:**

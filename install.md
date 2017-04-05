@@ -14,25 +14,25 @@ To install Hybridauth, we recommend using [Composer](https://getcomposer.org/) â
 
 If Composer is not installed on your system yet, you may go ahead and install it using this command line:
 
-```bash
+<pre>
 $ curl -sS https://getcomposer.org/installer | php
-```
+</pre>
 
 Next, add the following require entry to the `composer.json` file in the root of your project.
 
-```json
+<pre>
 {
     "require" : {
         "hybridauth/hybridauth" : "~3.0"
     }
 }
-```
+</pre>
 
 Finally, instruct Composer to install Hybridauth and its dependencies:
 
-```bash
+<pre>
 $ php composer.phar install
-```
+</pre>
 
 Composer will then download the latest version of Hybridauth Library and place it inside the `/vendor/` directory.
 
@@ -56,22 +56,22 @@ class files can be loaded automatically.
 
 In case you're using Composer, include `vendor/autoload.php` at the top of your script. The autoloader should be able to auto-detect the proper location of Hybridauth source code and auto-load all the required classes.
 
-```php
+<pre>
 include __DIR__ . 'vendor/autoload.php';
 
 use Hybridauth\Hybridauth;
 
 $instance = new Hybridauth([ /* ... */ ]);
-```
+</pre>
 
 #### Manual Installation
 
 Hybridauth comes bundled with a basic autoloader which can be found on the source folder `src/autoload.php` and it function in a similar way to Composer's.
 
-```php
+<pre>
 include __DIR__ . 'hybridauth/src/autoload.php';
 
 use Hybridauth\Hybridauth;
 
 $instance = new Hybridauth([ /* ... */ ]);
-```
+</pre>
