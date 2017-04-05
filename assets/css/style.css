@@ -307,6 +307,15 @@ body pre.prettyprint li {
     line-height: 26px;
 }
 
+code {
+	font-family: "Open Sans", Helvetica, sans-serif;
+	font-size: 16px;
+    padding: 3px 6px;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 2px;    
+}
+
 .btn {
     border-radius: 0;
     font-size: 20px;
