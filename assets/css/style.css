@@ -178,13 +178,15 @@ img{
     border: 1px solid #eee;
     border-left-width: 5px;
     border-radius: 3px; 
-    border-left-color: #5bc0de;
 }
 .bs-callout-info h4 {
     color: #5bc0de;
     border-bottom: 0 none;
     margin: auto;
     padding: auto;
+}
+.bs-callout-primary {
+    border-left-color: #5bc0de;
 }
 .bs-callout-danger {
     border-left-color: #d9534f;
@@ -258,7 +260,7 @@ img{
     margin-bottom: 5px;
 }
 
-#content p, #content  a, #content  td {
+#content p, #content  a, #content  td, .bs-callout, .alert {
 	font-family: "Open Sans", Helvetica, sans-serif;
 	font-size: 16px;
 	font-style: normal;
@@ -315,10 +317,26 @@ code {
     background-color: #f9f2f4;
     border-radius: 2px;    
 }
-
+#content p{
+    margin: 0 0 15px;
+    text-align: justify;
+} 
 .btn {
     border-radius: 0;
     font-size: 20px;
     margin-right: 4px;
 }
 
+.fa-check-square {
+    color:#21b2a6;
+    font-size: 1.4em;
+    margin-left:25px;
+}
+
+.bs-callout {
+    padding: 20px;
+}
+ 
+.alert {
+   margin-bottom: 10px;
+}

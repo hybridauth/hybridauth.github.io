@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Exceptions Handling"
+description: "Errors and exceptions handling."
+---
+
 Exceptions Handling
 ===================
 

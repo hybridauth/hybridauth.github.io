@@ -1,3 +1,9 @@
+---
+layout: default
+title: "User's profile"
+description: "Describes how to retrieve users profiles in standardized structure across all the social networks."
+---
+
 User's profile
 ==============
 

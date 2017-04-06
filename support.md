@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Help & Support"
+---
+
 Help & Support
 ==============
 

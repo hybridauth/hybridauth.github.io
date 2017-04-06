@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Plugins and Addons"
+---
+
 Plugins and Addons
 ==================
 

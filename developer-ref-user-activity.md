@@ -1,3 +1,9 @@
+---
+layout: default
+title: "User's Activity Stream"
+description: "Describes how to retrieve users activity stream such as tweets and Facebook’s wall."
+---
+
 User's Activity Stream
 ======================
 

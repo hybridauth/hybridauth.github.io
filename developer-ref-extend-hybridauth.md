@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Extending Hybridauth - Adding new providers"
+description: "Describes how to add new providers adapters to Hybridauth, and how to port them from 2.x."
+---
+
 # Upgrading supported providers to 3.0
 
 ## 1. OpenID

@@ -1,3 +1,9 @@
+---
+layout: default
+title: "User authentication"
+description: "Examples of how to authenticate users with a given providers and how to make use of OAuth access tokens."
+---
+
 User authentication
 ===================
 
@@ -72,40 +78,6 @@ try {
     * For more information, refer to Hybridauth full developer api.
     */
     $userProfile = $twitter->getUserProfile();
-}
-catch( Exception $e ){
-    echo 'Oops, we ran into an issue! ' . $e->getMessage();
-}
-</pre>
-
-### Legacy way (Similar to Hybridauth 2)
-
-Hybridauth 3 provides an unified entry point to the various providers it supports which make it easy to authenticate users
-with multiple providers.
-
-
-**Note:** If you were using Hybridauth 2, please refer to [Migrating to 3.0+](developer-ref-migrating.html) to make the
-necessary changes to your existing application in order to make it work with HybridAuth 3.
-
-<pre>
-$config = [
-    'base_url'  => 'http://localhost/hybridauth/callback.php',
-
-    'providers' => [
-        'Twitter' => [ 'enabled' => true, 'keys' => [ 'key' => 'twitter-consumer-key' , 'secret' => 'twitter-consumer-secret'   ] ],
-        'GitHub'  => [ 'enabled' => true, 'keys' => [ 'id'  => 'github-application-id', 'secret' => 'github-application-secret' ] ]
-    ]
-];
-
-// Instantiate Hybridauth main class with the config array
-$hybridauth = new Hybridauth\Hybridauth( $config );
-
-try{
-    // Authenticate with GitHub
-    $adapter = $hybridauth->authenticate( 'GitHub' );
-
-    // Retrieve the user github profile
-    $userProfile = $adapter->getUserProfile();
 }
 catch( Exception $e ){
     echo 'Oops, we ran into an issue! ' . $e->getMessage();

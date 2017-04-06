@@ -1,3 +1,9 @@
+---
+layout: default
+title: "User's Contacts"
+description: "Describes how to retrieve users contacts lists."
+---
+
 User's Contacts
 ===============
 

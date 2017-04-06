@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Migrating from Hybridauth 2 to Hybridauth 3"
+---
+
 Migrating from Hybridauth 2 to Hybridauth 3
 ===========================================
 
