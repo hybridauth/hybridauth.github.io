@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <title>
-        404: Page not found
+        Access Providers APIs
     </title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="description" content="">
+    <meta name="description" content="Outlines how to access social networks APIs in behalf of connected users.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700" rel="stylesheet" type="text/css">
@@ -50,19 +50,87 @@
 
 <!-- ... -->
 
-<h1>404: Page not found</h1>
+<h1 id="access-providers-apis">Access Providers APIs</h1>
 
-<br />
-<p>Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.</p>
-<p><a href="/">Head back home</a> to try finding it again.</p>
+<p>Once a user is authenticated with an OAuth1 or OAuth2 provider, and depending on the authorization given to your application, you should be able to query the that provider’s API in behalf of the connected user.</p>
 
-<style>
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-</style>
+<p>For this you can call the method <code class="highlighter-rouge">apiRequest</code> on a connected adapter instance, and it’s defined as follows:</p>
+
+<pre>
+function apiRequest(string $url [, string $method [, array $parameters [, array $headers]]])
+</pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">$url       </code></td>
+      <td>string</td>
+      <td>Required: Relative or absolute url to API’s action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">$method    </code></td>
+      <td>string</td>
+      <td>Optional: HTTP method. It can be either <strong>GET</strong> or <strong>POST</strong>, and defaults to GET.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">$parameters</code></td>
+      <td>array</td>
+      <td>Optional: HTTP GET parameters or POST data as an associative array.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">$headers   </code></td>
+      <td>array</td>
+      <td>Optional: HTTP REQUEST Headers as an associative array.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="bs-callout bs-callout-primary">OpenID being a decentralized authentication protocol and not an authorization standard, its adapters do not communicate with providers APIs and therefore you cannot perform any action in behalf of authenticated user, and Hybridauth will throw <code class="highlighter-rouge">NotImplementedException</code> when <code class="highlighter-rouge">apiRequest</code> is called. To know more about providers specs and capabilities, refer to <a href="providers.html">Supported Providers</a> . </div>
+
+<p><strong>Usage</strong></p>
+
+<p>Below is a simple example of how to access GitHub’s API.</p>
+
+<pre>
+//Instantiate GitHub's adapter
+$github = new Hybridauth\Provider\GitHub($config);
+
+//Authenticate the user
+$github-&gt;authenticate();
+
+//Access GitHub API to retrieve the user's public gists.
+//See: https://developer.github.com/v3/gists/
+$apiResponse = $github-&gt;apiRequest('gists'); // or absolute url: https://api.github.com/gists
+
+//Inspect API's response.
+var_dump($apiResponse);
+</pre>
+
+<hr />
+
+<p>Another simple example of how to access Twitter’s API.</p>
+
+<pre>
+//Instantiate Twitter's adapter
+$twitter = new Hybridauth\Provider\Twitter($config);
+
+//Authenticate the user
+$twitter-&gt;authenticate();
+
+//Access Twitter's API to post a status update
+//See: https://dev.twitter.com/rest/reference/post/statuses/update
+$apiResponse = $twitter-&gt;apiRequest('statuses/update.json', 'POST', [ 'status' =&gt; 'This is tests!' ]);
+
+//Inspect API's response.
+var_dump($apiResponse);
+</pre>
 
 
                 <br />

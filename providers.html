@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>
+        Supported providers
+    </title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Listing of supported social networks and identity providers and their enabled features.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/css/tranquil-heart.css" rel="stylesheet"> 
+    <link href="/assets/css/style.css" rel="stylesheet">   
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="/assets/js/prettify.js"></script>
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+</head>
+<body id="documentation">
+    <header>
+        <nav class="navbar navbar-fixed-top">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/index.html">Hybridauth 3</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right"> 
+                    <li><a href="https://github.com/hybridauth/hybridauth/releases" target="_blank">Download</a></li> 
+                    <li><a href="/documentation.html">Documentation</a></li>
+                    <li><a href="/getinvolved.html">Get involved</a></li> 
+                    <li><a href="/support.html">Support</a></li> 
+                    <li style="margin-right:10px">
+                        <form action="/search.html" method="get">
+                            <input type="text" name="q" class="search-input" placeholder="Search">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div id="content" class="container container-documentation">
+        <div class="block row">
+            <div class="col col-md-12">
+
+<!-- ... -->
+
+<h1 id="supported-providers">Supported providers</h1>
+
+<p>The table below lists the social networks and identity providers currently supported by Hybridauth 3 and outlines their enabled features (or capabilities).</p>
+
+<div class="bs-callout bs-callout-primary">A provider or IDP means a social network, identity provider or authentication service. An adapter is the actual PHP class implemented by Hybridauth to abstract a provider’s API.</div>
+
+<div class="bs-callout bs-callout-primary">While OpenID providers do not require an application <a href="http://openid.net/specs/openid-connect-core-1_0.html#Overview">[1]</a> and thus no action from your part to make their adapters work, OAuth providers requires consumer (or client) websites (i.g., your website) to register an application <a href="http://tools.ietf.org/html/rfc5849#page-3">[2]</a> <a href="http://tools.ietf.org/html/rfc6749#section-2">[3]</a>. Generally speaking those providers will have a dedicated developer’s section or subdomain where you can register yours and apply for a pair of keys (i.e, application credentials ).</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Adapter Unique Name</th>
+      <th>Specs</th>
+      <th>Authentication</th>
+      <th>User’s Profile</th>
+      <th>User’s Contacts</th>
+      <th>User’s Status</th>
+      <th>User’s Activity Stream</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Facebook</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td>[X]</td>
+    </tr>
+    <tr>
+      <td>Twitter</td>
+      <td>OAuth1</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td>[X]</td>
+    </tr>
+    <tr>
+      <td>Google</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>GitHub</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Reddit</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>BitBucket</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>WordPress</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Tumblr</td>
+      <td>OAuth1</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Disqus</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Dribbble</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>WindowsLive</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Foursquare</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Instagram</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>LinkedIn</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Yahoo</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Vkontakte</td>
+      <td>OAuth2</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Mailru</td>
+      <td>OAuth2</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Odnoklassniki</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>StackExchange</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>OpenID</td>
+      <td>OpenID</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>PaypalOpenID</td>
+      <td>OpenID</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>StackExchangeOpenID</td>
+      <td>OpenID</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>YahooOpenID</td>
+      <td>OpenID</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>AOLOpenID</td>
+      <td>OpenID</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Steam</td>
+      <td>Hybrid</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Discord</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TwitchTV</td>
+      <td>OAuth2</td>
+      <td>[X]</td>
+      <td>[X]</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="bs-callout bs-callout-default">Some providers such as Google and Yahoo may use multiple protocols for their APIs and as naming convention we append the protocol’s name to the adapter’s (Often the case with OpenID adapters as those might be subject to removal by providers in near future due to deprecation of the OpenID protocol).</div>
+
+<script>
+$(function () {
+  $("td:contains('[X]')").each(function() {
+    var replaced = $(this).html().replace(/\[X\]/g, '<i class="fa fa-check-square fa-2"></i>');
+    $(this).html(replaced);
+  });
+});
+</script>
+
+
+
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row"> 
+                <ul>
+                    <li><a href="//index.html">Home</a></li>
+                    <li><a href="https://github.com/hybridauth/hybridauth/releases" target="_blank">Download</a></li> 
+                    <li><a href="/documentation.html">Documentation</a></li>
+                    <li><a href="/getinvolved.html">Get involved</a></li> 
+                    <li><a href="/support.html">Support</a></li> 
+                    <li><a href="/license.html">License</a></li> 
+                    <span style="color:white">&mdash;</span>
+                    <li><a href="https://github.com/hybridauth/hybridauth" target="_blank">Github</a></li> 
+                    <li><a href="https://gitter.im/hybridauth/hybridauth" target="_blank">Gitter</a></li> 
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

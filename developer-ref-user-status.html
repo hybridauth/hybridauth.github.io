@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <title>
-        404: Page not found
+        Update User Status
     </title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="description" content="">
+    <meta name="description" content="Outlines how to update user’s status.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700" rel="stylesheet" type="text/css">
@@ -50,19 +50,63 @@
 
 <!-- ... -->
 
-<h1>404: Page not found</h1>
+<h1 id="update-user-status">Update User Status</h1>
 
-<br />
-<p>Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.</p>
-<p><a href="/">Head back home</a> to try finding it again.</p>
+<p>Hybridauth provides a way to updates users statuses across the social APIs supporting this feature.</p>
 
-<style>
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-</style>
+<p>If a provider does not support this feature, Hybridauth will throw an exception <code class="highlighter-rouge">NotImplementedException</code>.
+To know more about providers capabilities, refer to <a href="providers.html">Supported Providers</a> .</p>
+
+<p><strong>Twitter example :</strong></p>
+
+<pre>
+//Instantiate Twitter Adapter
+$twitter = new Hybridauth\Provider\Twitter($config);
+
+//Authenticate the user
+$twitter-&gt;authenticate();
+
+//Update the user status
+$twitter-&gt;setUserStatus( "Hello world!" );
+</pre>
+
+<hr />
+
+<p><strong>Tumblr example :</strong></p>
+
+<pre>
+//Instantiate Tumblr Adapter
+$tumblr = new Hybridauth\Provider\Tumblr($config);
+
+//Authenticate the user
+$tumblr-&gt;authenticate();
+
+//Post a blog post
+$tumblr-&gt;setUserStatus( "Hello world!" );
+</pre>
+
+<hr />
+
+<p><strong>Facebook example :</strong></p>
+
+<p>Facebook supports few extra parameters when posting a new user status :</p>
+
+<pre>
+//Instantiate Facebook Adapter
+$facebook = new Hybridauth\Provider\Facebook($config);
+
+//Authenticate the user
+$facebook-&gt;authenticate();
+
+//Update the user status
+$facebook-&gt;setUserStatus(
+    array(
+        'message' =&gt; 'Hello world!',
+        'link'    =&gt; 'https://example.com/link/to/page',
+        'picture' =&gt; 'https://example.com/link/to/picture.jpg'
+    )
+);
+</pre>
 
 
                 <br />

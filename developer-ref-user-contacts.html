@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <title>
-        404: Page not found
+        User's Contacts
     </title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="description" content="">
+    <meta name="description" content="Describes how to retrieve users contacts lists.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700" rel="stylesheet" type="text/css">
@@ -50,19 +50,84 @@
 
 <!-- ... -->
 
-<h1>404: Page not found</h1>
+<h1 id="users-contacts">User’s Contacts</h1>
 
-<br />
-<p>Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.</p>
-<p><a href="/">Head back home</a> to try finding it again.</p>
+<p>Similarly to the user’s profile, after authentication, Hybridauth can provide the connected user contact
+list in a rich, simple and <strong>standardized structure</strong> across the social APIs supporting this feature.</p>
 
-<style>
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+<p>If a provider does not support this feature, Hybridauth will throw an exception <code class="highlighter-rouge">NotImplementedException</code>.
+To know more about providers capabilities, refer to <a href="providers.html">Supported Providers</a> .</p>
+
+<p><strong>Usage :</strong></p>
+
+<pre>
+//Instantiate Google Adapter
+$google = new Hybridauth\Provider\Google($config);
+
+//Sign in with google
+$google-&gt;authenticate();
+
+//Retrieve User's contacts
+$userContacts = $google-&gt;getUserContatcs(); //Returns an array of Hybridauth\User\Contact objects
+
+//Iterate over the user contacts list
+foreach( $userContacts as $contact ){
+	echo $contact-&gt;displayName . ' ' . $contact-&gt;profileURL . "\n";
 }
-</style>
+</pre>
+
+<h3 id="class-hybridauthusercontact">Class Hybridauth\User\Contact</h3>
+
+<p>This class represents a user’s contact.</p>
+
+<p><strong>Data Members :</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Short description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>identifier</td>
+      <td>String</td>
+      <td>The Unique contact’s ID on the connected provider. Usually an integer.</td>
+    </tr>
+    <tr>
+      <td>profileURL</td>
+      <td>String</td>
+      <td>URL link to profile page on the IDp web site</td>
+    </tr>
+    <tr>
+      <td>webSiteURL</td>
+      <td>String</td>
+      <td>User website, blog, web page, etc.</td>
+    </tr>
+    <tr>
+      <td>photoURL</td>
+      <td>String</td>
+      <td>URL link to user photo or avatar</td>
+    </tr>
+    <tr>
+      <td>displayName</td>
+      <td>String</td>
+      <td>User dispalyName provided by the IDp or a concatenation of first and last name.</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>String</td>
+      <td>A short about_me or the last contact status</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>String</td>
+      <td>User email. <em>Not all of IDp grant access to the user email</em></td>
+    </tr>
+  </tbody>
+</table>
 
 
                 <br />

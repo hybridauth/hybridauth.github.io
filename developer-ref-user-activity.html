@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <title>
-        404: Page not found
+        User's Activity Stream
     </title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="description" content="">
+    <meta name="description" content="Describes how to retrieve users activity stream such as tweets and Facebook’s wall.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700" rel="stylesheet" type="text/css">
@@ -50,19 +50,108 @@
 
 <!-- ... -->
 
-<h1>404: Page not found</h1>
+<h1 id="users-activity-stream">User’s Activity Stream</h1>
 
-<br />
-<p>Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.</p>
-<p><a href="/">Head back home</a> to try finding it again.</p>
+<p>Similarly to the user’s profile, after authentication, Hybridauth can provide the connected user activity
+stream in a simple and <strong>standardized structure</strong> across the social APIs supporting this feature.</p>
 
-<style>
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+<p>If a provider does not support this feature, Hybridauth will throw an exception <code class="highlighter-rouge">NotImplementedException</code>.
+To know more about providers capabilities, refer to <a href="providers.html">Supported Providers</a> .</p>
+
+<p><strong>Usage :</strong></p>
+
+<pre>
+//Instantiate Twitter Adapter
+$twitter = new Hybridauth\Provider\Twitter($config);
+
+//Sign in with twitter
+$twitter-&gt;authenticate();
+
+//Retrieve User's latest tweets
+$timeline = $adapter-&gt;getUserActivity('me'); //Returns an array of Hybridauth\User\Activity objects
+
+//Iterate over the user's timeline
+foreach($timeline as $item){
+    echo $item-&gt;user-&gt;displayName . ': ' . $item-&gt;text . "\n";
 }
-</style>
+</pre>
+
+<h3 id="class-hybridauthuseractivity">Class Hybridauth\User\Activity</h3>
+
+<p>This class represents a user’s activity.</p>
+
+<p><strong>Data Members :</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Short description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Event ID on the provider side</td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td>String</td>
+      <td>Event date of creation. provided as is for now.</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>String</td>
+      <td>Activity/event/story content as string.</td>
+    </tr>
+    <tr>
+      <td>user</td>
+      <td>stdClas</td>
+      <td>User owner of activity. <small>See section below for its structure.</small></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="sub-class-hybridauthuseractivityuser">Sub class Hybridauth\User\Activity::user</h4>
+
+<p>This class represents a user’s activity owner.</p>
+
+<p><strong>Data Members :</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Short description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>identifier</td>
+      <td>String</td>
+      <td>The Unique user ID on the provider side. Usually an interger.</td>
+    </tr>
+    <tr>
+      <td>displayName</td>
+      <td>String</td>
+      <td>User dispalyName provided by the provider</td>
+    </tr>
+    <tr>
+      <td>profileURL</td>
+      <td>String</td>
+      <td>URL link to profile page on the IDp web site</td>
+    </tr>
+    <tr>
+      <td>photoURL</td>
+      <td>String</td>
+      <td>URL link to user photo or avatar</td>
+    </tr>
+  </tbody>
+</table>
+
 
 
                 <br />
