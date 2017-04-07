@@ -58,6 +58,8 @@
 
 <p>In the following example we’ll demonstrate who to sign a user with Google and how to retrieve his profile using Hybridauth in 4 simple steps. In addition we’ll discuss all possible configuration parameters, required or otherwise.</p>
 
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This assumes you have already created and configured a Google application, which you can obtain from their <a href="https://console.cloud.google.com/">Cloud Console</a>.</div>
+
 <pre>
 /**
 * 1. Build the adapter configuration array
@@ -67,12 +69,9 @@ $config = [
     * Required: Callback URL
     *
     * The callback url is the location where a provider (Google in this case) will redirect the use once they
-    * authenticate and authorize your application.
+    * authenticate and authorize your application. For this example we choose to come back to this same script.
     *
-    * For this example we choose to come back to this same script, however in your project you'll have to you need to
-    * replace it with the valid url to yours. 
-    *
-    * For convenience, Hybridauth provides an utility function `Hybridauth\HttpClient\Util::getCurrentUrl()` that can
+    * Note that Hybridauth provides an utility function `Hybridauth\HttpClient\Util::getCurrentUrl()` that can
     * generate the current page url for you and you can use it for the callback.
     */
     'callback' =&gt; 'http://localhost/path/to/this/script.php',
@@ -80,9 +79,11 @@ $config = [
     /**
     * Required*: Application credentials
     *
-    * A set of keys used by providers to identify your website and only required by those using OAuth 1 and OAuth 2. To acquire
-    * these you'll have to register an application on provider's site. In the case of Google for instance you can refer to
-    * https://support.google.com/cloud/answer/6158849
+    * A set of keys used by providers to identify your website (analogous to a login and password). 
+    * To acquire these credentials you'll have to register an application on provider's site. In the case of Google
+    * for instance, you can refer to https://support.google.com/cloud/answer/6158849
+    *
+    * Application credentials are only required by providers using OAuth 1 and OAuth 2.
     */
     'keys' =&gt; [ 
         'id'     =&gt; 'your-google-client-id',
@@ -93,7 +94,7 @@ $config = [
     * Optional: Custom Scope
     *
     * Providers using OAuth 2 will requires to know the scope of the authorization a user is going to give to your
-    * application, and Hybridauth's adapters will request a limited scope by default, however you may specify a custom
+    * application. Hybridauth's adapters will request a limited scope by default, however you may specify a custom
     * value to overwrite default ones.
     */
     'scope' =&gt; 'profile https://www.googleapis.com/auth/plus.profile.emails.read', 
@@ -101,8 +102,8 @@ $config = [
     /**
     * Optional: Custom Provider's API end points
     *
-    * Hybridauth allows you to overwrite all the provider's API end point, which might be useful in some cases like when
-    * there is a need to use a different API version for example.
+    * Hybridauth allows you to overwrite all the provider's API end-points which might be useful in some cases like when
+    * there is a need to use a different version of the API for example.
     */
     'endpoints' =&gt; [
         'api_base_url'     =&gt; 'https://www.googleapis.com/plus/v1/',
@@ -163,10 +164,9 @@ $adapter = new Hybridauth\Provider\Google($config);
 /**
 * 3. Sign in a user with Google
 *
-* Hybridauth will attempt to negotiate with the Google api and authenticate the user. If for whatever reason the process fails,
-* Hybridauth will then throw an exception.
-*
-* Note that if the user is already authenticated, then any subsequent call to this method will be ignored.
+* The method `authenticate()` will attempt to connect to the Google API then redirect the user to Google's website for
+* authentication. If for whatever reason the process fails, Hybridauth will then raise an exception, however if the user
+* successfully authenticated, then any subsequent call to this method will be ignored.
 */
 $adapter-&gt;authenticate();
 
@@ -218,7 +218,7 @@ $adapter = new Hybridauth\Provider\Google($config);
 * we have. In case the access tokens we used has been revoked or expired, the provider's will reject the connection, and
 * Hybridauth will throw an exception.
 *
-* Note that these tokens should be the same format and content returned by `Adapter::getAccessToken()`
+* Note that these tokens should be the same format and content returned by `getAccessToken()`
 */
 $adapter-&gt;setAccessToken($accessToken);
 
