@@ -15,12 +15,12 @@ $(function () {
 	prettyPrint()
     $('header form').remove();
 
-    // window.addEventListener("scroll", function() {
-        // if ( window.scrollY > 50 ) {
-            // $('.navbar, .githubico').css( 'opacity', 0.8 )
-        // }
-        // else {
-            // $('.navbar, .githubico').css( 'opacity', 1 )
-        // }
-    // },false)
+    window.addEventListener("scroll", function() {
+        if ( window.scrollY > 50 ) {
+            $('.navbar, .githubico').css( 'opacity', 0.8 )
+        }
+        else {
+            $('.navbar, .githubico').css( 'opacity', 1 )
+        }
+    },false)
 })
