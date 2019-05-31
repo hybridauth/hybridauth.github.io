@@ -16,16 +16,16 @@ HybridAuth was able to pull from the given API or authentication provider.
 **Sample :**
 
 <pre>
-//Instantiate Github Adapter
+//Instantiate Github Adapter.
 $github = new Hybridauth\Provider\GitHub($config);
 
-//Authenticate using Github
+//Authenticate using Github.
 $github->authenticate();
 
-//Retrieve User's profile
-$userProfile = $github->getUserProfile(); //Returns an instance of class Hybridauth\User\Profile
+//Retrieve User's profile.
+$userProfile = $github->getUserProfile(); //Returns an instance of class Hybridauth\User\Profile.
 
-//Access User's dispaly name
+//Access User's dispaly name.
 echo 'Hi ' . $userProfile->displayName;
 </pre>
 
