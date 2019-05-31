@@ -20,31 +20,31 @@ try {
 }
 
 /**
-* Catch Curl Errors
-*
-* This kind of error may happen when:
-*     - Internet or Networks issues.
-*     - Your server configuration is not setup correctly.
-* The full list of curl errors that may happen can be found at http://curl.haxx.se/libcurl/c/libcurl-errors.html
-*/
+ * Catch Curl Errors
+ *
+ * This kind of error may happen when:
+ *     - Internet or Networks issues.
+ *     - Your server configuration is not setup correctly.
+ * The full list of curl errors that may happen can be found at http://curl.haxx.se/libcurl/c/libcurl-errors.html
+ */
 catch (Hybridauth\Exception\HttpClientFailureException $e) {
     echo 'Curl text error message : ' . $github->getHttpClient()->getResponseClientError();
 }
 
 /**
-* Catch API Requests Errors
-*
-* This usually happen when requesting a:
-*     - Wrong URI or a mal-formatted http request.
-*     - Protected resource without providing a valid access token.
-*/
+ * Catch API Requests Errors
+ *
+ * This usually happen when requesting a:
+ *     - Wrong URI or a mal-formatted http request.
+ *     - Protected resource without providing a valid access token.
+ */
 catch (Hybridauth\Exception\HttpRequestFailedException $e) {
     echo 'Raw API Response: ' . $github->getHttpClient()->getResponseBody();
 }
 
 /**
-* This fellow will catch everything else
-*/
+ * This fellow will catch everything else
+ */
 catch (\Exception $e) {
     echo 'Oops! We ran into an unknown issue: ' . $e->getMessage();
 }

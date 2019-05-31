@@ -15,6 +15,7 @@ The table below lists the social networks and identity providers currently suppo
 
 | Adapter Unique Name |  Specs | Authentication | User's Profile | User's Contacts | User's Status | User's Activity Stream |
 |:-------------------:|:------:|:--------------:|:--------------:|:---------------:|:-------------:|:----------------------:|
+|      Amazon         | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |      AOLOpenID      | OpenID |       [X]      |       [X]      |                 |               |                        |
 |      Authentiq      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |      BitBucket      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
@@ -22,7 +23,7 @@ The table below lists the social networks and identity providers currently suppo
 |       Discord       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Disqus       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Dribbble      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
-|       Facebook      | OAuth2 |       [X]      |       [X]      |       [X]       |   Deprecated  |           [X]          |
+|       Facebook      | OAuth2 |       [X]      |       [X]      |       [X]       |               |           [X]          |
 |      Foursquare     | OAuth2 |       [X]      |       [X]      |       [X]       |               |                        |
 |        GitHub       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        GitLab       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
@@ -33,6 +34,7 @@ The table below lists the social networks and identity providers currently suppo
 |    MicrosoftGraph   | OAuth2 |       [X]      |       [X]      |       [X]       |               |                        |
 |    Odnoklassniki    | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        OpenID       | OpenID |       [X]      |       [X]      |                 |               |                        |
+|        Paypal       | OpenID |       [X]      |       [X]      |                 |               |                        |
 |     PaypalOpenID    | OpenID |       [X]      |       [X]      |                 |               |                        |
 |        Reddit       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Spotify       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
@@ -47,6 +49,7 @@ The table below lists the social networks and identity providers currently suppo
 |        WeChat       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |     WindowsLive     | OAuth2 |       [X]      |       [X]      |       [X]       |               |                        |
 |      WordPress      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
+|        Yandex       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Yahoo        | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |     YahooOpenID     | OpenID |       [X]      |       [X]      |                 |               |                        |
 

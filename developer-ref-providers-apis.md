@@ -57,7 +57,7 @@ $twitter->authenticate();
 
 //Access Twitter's API to post a status update
 //See: https://dev.twitter.com/rest/reference/post/statuses/update
-$apiResponse = $twitter->apiRequest('statuses/update.json', 'POST', [ 'status' => 'This is tests!' ]);
+$apiResponse = $twitter->apiRequest('statuses/update.json', 'POST', ['status' => 'This is tests!']);
 
 //Inspect API's response.
 var_dump($apiResponse);

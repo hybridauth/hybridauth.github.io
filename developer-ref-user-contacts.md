@@ -16,17 +16,17 @@ To know more about providers capabilities, refer to [Supported Providers](provid
 **Usage :**
 
 <pre>
-//Instantiate Google Adapter
+//Instantiate Google Adapter.
 $google = new Hybridauth\Provider\Google($config);
 
-//Sign in with google
+//Sign in with google.
 $google->authenticate();
 
-//Retrieve User's contacts
-$userContacts = $google->getUserContacts(); //Returns an array of Hybridauth\User\Contact objects
+//Retrieve User's contacts.
+$userContacts = $google->getUserContacts(); //Returns an array of Hybridauth\User\Contact objects.
 
-//Iterate over the user contacts list
-foreach( $userContacts as $contact ){
+//Iterate over the user contacts list.
+foreach ($userContacts as $contact) {
 	echo $contact->displayName . ' ' . $contact->profileURL . "\n";
 }
 </pre>
@@ -44,6 +44,6 @@ identifier    | String   | The Unique contact's ID on the connected provider. Us
 profileURL    | String   | URL link to profile page on the IDp web site
 webSiteURL    | String   | User website, blog, web page, etc.
 photoURL      | String   | URL link to user photo or avatar
-displayName   | String   | User dispalyName provided by the IDp or a concatenation of first and last name.
+displayName   | String   | User displayName provided by the IDp or a concatenation of first and last name.
 description   | String   | A short about_me or the last contact status
 email         | String   | User email. *Not all of IDp grant access to the user email*

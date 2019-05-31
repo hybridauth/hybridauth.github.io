@@ -19,14 +19,14 @@ To know more about providers capabilities, refer to [Supported Providers](provid
 //Instantiate Twitter Adapter
 $twitter = new Hybridauth\Provider\Twitter($config);
 
-//Sign in with twitter
+//Sign in with twitter.
 $twitter->authenticate();
 
-//Retrieve User's latest tweets
-$timeline = $adapter->getUserActivity('me'); //Returns an array of Hybridauth\User\Activity objects
+//Retrieve User's latest tweets.
+$timeline = $adapter->getUserActivity('me'); //Returns an array of Hybridauth\User\Activity objects.
 
-//Iterate over the user's timeline
-foreach($timeline as $item){
+//Iterate over the user's timeline.
+foreach ($timeline as $item) {
     echo $item->user->displayName . ': ' . $item->text . "\n";
 }
 </pre>
@@ -43,7 +43,7 @@ Field Name    | Type     | Short description
 id            | String   | Event ID on the provider side
 date          | String   | Event date of creation. provided as is for now.
 text          | String   | Activity/event/story content as string.
-user	      | stdClas  | User owner of activity. <small>See section below for its structure.</small> 
+user	      | stdClass  | User owner of activity. <small>See section below for its structure.</small>
 
 #### Sub class Hybridauth\User\Activity::user
 

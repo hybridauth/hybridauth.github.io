@@ -33,7 +33,7 @@ Welcome to Hybridauth documentation. We recommend to start by reading [Installat
 
 . | .
 --------------------------------------------------------------- | ---------------------------------------------------------
-[Migrating from 2.x](developer-ref-migrating.html)              | (not done yet)
+[Migrating from 2.x](developer-ref-migrating.html)              | Describes how to migrate from Hybridauth 2.x to Hybridauth 3.0.
 
 <style>
     thead { display:none !important; }
