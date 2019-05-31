@@ -126,7 +126,8 @@ var_dump($apiResponse);
 
 #### 6. Feeling like something is missing? Please [let us know](https://github.com/hybridauth/hybridauth/issues/new).
 
-Thanks.
+<br>
+<br>
 
 <style>
 footer {
