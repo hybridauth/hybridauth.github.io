@@ -9,13 +9,13 @@ Migrating from Hybridauth 2 to Hybridauth 3
 This is a pretty big release with lots of changes under the hood.
 Be sure to read the other pages in this guide for all the new features and API changes.
 
-1. Upgrade to the latest hybridauth (see [Installation](install.html)):
+##### 1. Upgrade to the latest hybridauth (see [Installation](install.html)):
 
 <pre>
 composer require 'hybridauth/hybridauth:~3.0'
 </pre>
 
-2. Migrate your configuration array (see [Introduction](introduction.html)):
+##### 2. Migrate your configuration array (see [Introduction](introduction.html)):
 
 **Hybridauth 2.x:**
 
@@ -62,13 +62,13 @@ $config = [
 ];
 </pre>
 
-3. Migrate your OAuth 2.0 Redirect Urls:
+##### 3. Migrate your OAuth 2.0 Redirect Urls:
 
 Note, that **Hybridauth 2.x** uses `hauth.done={providerId}` in `OAuth 2.0 Redirect Urls` to determine which provider to authenticate.
 
 In **Hybridauth 3.x**, it's not required anymore. Check out [examples](https://github.com/hybridauth/hybridauth/tree/master/examples) to see whole picture. 
 
-4. Migrate your authentication (see [User Authentication](developer-ref-user-authentication.html)):
+##### 4. Migrate your authentication (see [User Authentication](developer-ref-user-authentication.html)):
 
 **Hybridauth 2.x:**
 
@@ -92,7 +92,7 @@ $adapter = $hybridauth->authenticate();
 $userProfile = $adapter->getUserProfile();
 </pre>
 
-5. Migrate custom API calls (see [Providers APIs](developer-ref-providers-apis.html)):
+##### 5. Migrate custom API calls (see [Providers APIs](developer-ref-providers-apis.html)):
 
 **Hybridauth 2.x:**
 
@@ -123,6 +123,8 @@ $apiResponse = $adapter->apiRequest('gists'); // or absolute url: https://api.gi
 //Inspect API's response.
 var_dump($apiResponse);
 </pre>
+
+##### 6. Feeling like something is missing? Please [let us know](https://github.com/hybridauth/hybridauth/issues/new).
 
 <style>
 footer {
