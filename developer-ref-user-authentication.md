@@ -11,7 +11,7 @@ User Authentication
 
 ### User Authentication:
 
-In the following example we'll demonstrate who to sign a user with Google and how to retrieve his profile using Hybridauth in 4 simple steps. In addition we'll discuss all possible configuration parameters, required or otherwise.
+In the following example we'll demonstrate how to sign a user with Google and how to retrieve his profile using Hybridauth in 4 simple steps. In addition we'll discuss all possible configuration parameters, required or otherwise.
 
 <pre>
 /**
