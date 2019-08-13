@@ -12,7 +12,7 @@ Once a user is authenticated with an OAuth1 or OAuth2 provider, and depending on
 For this you can call the method `apiRequest` on a connected adapter instance, and it's defined as follows:
 
 <pre>
-function apiRequest(string $url [, string $method [, array $parameters [, array $headers]]])
+function apiRequest(string $url [, string $method [, array $parameters [, array $headers [, bool $multipart]]]])
 </pre>
 
 Parameter     | Type   | Description
@@ -21,6 +21,7 @@ Parameter     | Type   | Description
 `$method    ` | string | Optional: HTTP method. It can be either **GET** or **POST**, and defaults to GET.
 `$parameters` | array  | Optional: HTTP GET parameters or POST data as an associative array.
 `$headers   ` | array  | Optional: HTTP REQUEST Headers as an associative array.
+`$multipart ` | bool   | Optional: If HTTP request should be sent as `multipart/form-data`, used when uploading images/videos
 
 {% include callout.html content="OpenID being a decentralized authentication protocol and not an authorization standard, its adapters do not communicate with providers APIs and therefore you cannot perform any action in behalf of authenticated user, and Hybridauth will throw `NotImplementedException` when `apiRequest` is called. To know more about providers specs and capabilities, refer to [Supported Providers](providers.html) . " type="primary" %}
 
@@ -61,4 +62,32 @@ $apiResponse = $twitter->apiRequest('statuses/update.json', 'POST', ['status' =>
 
 //Inspect API's response.
 var_dump($apiResponse);
+</pre>
+
+<hr />
+
+Below is an example for uploading a video to a Facebook Page.
+
+<pre>
+//Instantiate Facebook's adapter
+$facebook = new Hybridauth\Provider\Facebook($config);
+
+//Authenticate the user
+$facebook->authenticate();
+
+//Access Facebook's API to post a video
+//See: https://developers.facebook.com/docs/graph-api/video-uploads/
+$facebook->apiRequest('https://graph-video.facebook.com/PAGE_ID/videos',
+                      'POST',
+                      [
+                          'title'       => $videoTitle,
+                          'description' => $videoDescription,
+                          'source'      => new \CURLFile($videoPath),
+                      ],
+                      [],
+                      true
+);
+
+//Inspect API's response.
+var_dump($apiResponse); 
 </pre>
