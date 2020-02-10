@@ -47,7 +47,7 @@ The table below lists the social networks and identity providers currently suppo
 |        Tumblr       | OAuth1 |       [X]      |       [X]      |       [X]       |      [X]      |                        |
 |       TwitchTV      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Twitter       | OAuth1 |       [X]      |       [X]      |       [X]       |      [X]      |           [X]          |
-|      Vkontakte      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
+|      Vkontakte      | OAuth2 |       [X]      |       [X]      |       [X]       |               |                        |
 |        WeChat       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |     WindowsLive     | OAuth2 |       [X]      |       [X]      |       [X]       |               |                        |
 |      WordPress      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
