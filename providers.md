@@ -43,6 +43,7 @@ The table below lists the social networks and identity providers currently suppo
 |    StackExchange    | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 | StackExchangeOpenID | OpenID |       [X]      |       [X]      |                 |               |                        |
 |        Steam        | Hybrid |       [X]      |       [X]      |                 |               |                        |
+|        Strava       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |     SteemConnect    | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Telegram      | Hybrid |       [X]      |       [X]      |                 |               |                        |
 |        Tumblr       | OAuth1 |       [X]      |       [X]      |       [X]       |      [X]      |                        |
