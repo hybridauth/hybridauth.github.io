@@ -15,7 +15,7 @@ The table below lists the social networks and identity providers currently suppo
 
 | Adapter Unique Name |  Specs | Authentication | User's Profile | User's Contacts | User's Status | User's Activity Stream |
 |:-------------------:|:------:|:--------------:|:--------------:|:---------------:|:-------------:|:----------------------:|
-|      Amazon         | OAuth2 |       [X]      |       [X]      |                 |               |                        |
+|        Amazon       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |      AOLOpenID      | OpenID |       [X]      |       [X]      |                 |               |                        |
 |      Authentiq      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |      BitBucket      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
@@ -38,6 +38,7 @@ The table below lists the social networks and identity providers currently suppo
 |        Paypal       | OpenID |       [X]      |       [X]      |                 |               |                        |
 |     PaypalOpenID    | OpenID |       [X]      |       [X]      |                 |               |                        |
 |        Reddit       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
+|        Slack        | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Spotify       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |    StackExchange    | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 | StackExchangeOpenID | OpenID |       [X]      |       [X]      |                 |               |                        |
