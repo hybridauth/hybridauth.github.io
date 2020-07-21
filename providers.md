@@ -15,6 +15,7 @@ The table below lists the social networks and identity providers currently suppo
 
 | Adapter Unique Name |  Specs | Authentication | User's Profile | User's Contacts | User's Status | User's Activity Stream |
 |:-------------------:|:------:|:--------------:|:--------------:|:---------------:|:-------------:|:----------------------:|
+|        [Apple](providers/apple.md)        | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Amazon       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |      AOLOpenID      | OpenID |       [X]      |       [X]      |                 |               |                        |
 |      Authentiq      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
