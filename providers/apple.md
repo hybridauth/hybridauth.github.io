@@ -8,24 +8,23 @@ Apple
 ==========================
 
 ## Dependencies
- * `composer require firebase/php-jwt`
- * `composer require phpseclib/phpseclib`
+- `composer require firebase/php-jwt`
+- `composer require phpseclib/phpseclib`
 
 ## Online documentation
-
-https://developer.apple.com/sign-in-with-apple/get-started/
-https://developer.okta.com/blog/2019/06/04/what-the-heck-is-sign-in-with-apple
-https://sarunw.com/posts/sign-in-with-apple-2/
+- [https://developer.apple.com/sign-in-with-apple/get-started](https://developer.apple.com/sign-in-with-apple/get-started)
+- [https://developer.okta.com/blog/2019/06/04/what-the-heck-is-sign-in-with-apple](https://developer.okta.com/blog/2019/06/04/what-the-heck-is-sign-in-with-apple)
+- [https://sarunw.com/posts/sign-in-with-apple-2](https://sarunw.com/posts/sign-in-with-apple-2)
 
 ## Enable email delivery
 
-Sign in to https://developer.apple.com/account/resources
+Sign in to [https://developer.apple.com/account/resources](https://developer.apple.com/account/resources)
 
 Click on "More ..." and add domains and email addresses (requires SPF and DKIM, probably also an Apple ID in .well-known)
 
 ## Keys & IDs
 
-Sign in to https://developer.apple.com/account/resources
+Sign in to [https://developer.apple.com/account/resources](https://developer.apple.com/account/resources)
 
 ### Identifiers
 
