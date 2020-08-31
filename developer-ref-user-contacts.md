@@ -44,6 +44,8 @@ identifier    | String   | The Unique contact's ID on the connected provider. Us
 profileURL    | String   | URL link to profile page on the IDp web site
 webSiteURL    | String   | User website, blog, web page, etc.
 photoURL      | String   | URL link to user photo or avatar
-displayName   | String   | User displayName provided by the IDp or a concatenation of first and last name.
-description   | String   | A short about_me or the last contact status
+displayName   | String   | User display name provided by the IDp or a concatenation of first and last name.
+description   | String   | A short about-me or the last contact status
 email         | String   | User email. *Not all of IDp grant access to the user email*
+
+(IDp stands for ID Provider)

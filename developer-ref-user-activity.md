@@ -43,7 +43,7 @@ Field Name    | Type     | Short description
 id            | String   | Event ID on the provider side
 date          | String   | Event date of creation. provided as is for now.
 text          | String   | Activity/event/story content as string.
-user	      | stdClass  | User owner of activity. <small>See section below for its structure.</small>
+user          | stdClass  | User owner of activity. <small>See section below for its structure.</small>
 
 #### Sub class Hybridauth\User\Activity::user
 
@@ -54,7 +54,8 @@ This class represents a user's activity owner.
 Field Name    | Type     | Short description
 ------------- | ---------| -------------------------------------------------------
 identifier    | String   | The Unique user ID on the provider side. Usually an interger.
-displayName   | String   | User dispalyName provided by the provider
+displayName   | String   | User display name provided by the provider
 profileURL    | String   | URL link to profile page on the IDp web site
 photoURL      | String   | URL link to user photo or avatar
 
+(IDp stands for ID Provider)
