@@ -21,7 +21,7 @@ composer require 'hybridauth/hybridauth:~3.0'
 
 <pre>
 $config = [
-    // "base_url" the url that point to HybridAuth Endpoint (where index.php and config.php are found).
+    // "base_url" the url that point to Hybridauth Endpoint (where index.php and config.php are found).
     'base_url' => 'https://mywebsite/path/to/hybridauth/',
 
     // Providers specifics.
