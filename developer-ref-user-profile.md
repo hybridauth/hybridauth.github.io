@@ -8,10 +8,10 @@ User's profile
 ==============
 
 Once a user is authenticated against a provider API, you can retrieve the user's profile in a rich, 
-simple and **standardized structure** across **all** the social APIs supported by HybridAuth.
+simple and **standardized structure** across **all** the social APIs supported by Hybridauth.
 
 The `Hybridauth\User\Profile` object will be populated with as much information about the user as 
-HybridAuth was able to pull from the given API or authentication provider.
+Hybridauth was able to pull from the given API or authentication provider.
 
 **Sample :**
 
