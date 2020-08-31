@@ -97,6 +97,10 @@ try{
     //simply replace 'Twitter' with 'Google' or 'Facebook'.
 
     //Attempt to authenticate users with a provider by name
+    //This call will basically do one of 3 things...
+    //1) Redirect away (with exit) to show an authentication screen for a provider (e.g. Facebook's OAuth confirmation page)
+    //2) Finalize an incoming authentication and store access data in a session
+    //3) Confirm a session exists and do nothing
     $adapter = $hybridauth->authenticate('Twitter'); 
 
     //Returns a boolean of whether the user is connected with Twitter
