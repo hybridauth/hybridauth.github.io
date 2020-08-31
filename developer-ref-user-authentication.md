@@ -7,11 +7,11 @@ description: "Examples of how to authenticate users with a given providers and h
 User Authentication
 ===================
 
-{% include callout.html content="If you're new to Hybridauth, you may want to start with the [Introduction](introduction.html) to get a general overview of the library and its basic usage. This section will tackle users authentication in more details." type="primary" %} 
+{% include callout.html content="If you're new to Hybridauth, you may want to start with the [Introduction](introduction.html) to get a general overview of the library and its basic usage. This section will tackle user authentication in more detail." type="primary" %}
 
 ### User Authentication:
 
-In the following example we'll demonstrate how to sign a user with Google and how to retrieve his profile using Hybridauth in 4 simple steps. In addition we'll discuss all possible configuration parameters, required or otherwise.
+In the following example we'll demonstrate how to sign in a user with Google and how to retrieve their profile using Hybridauth in 4 simple steps. In addition we'll discuss all possible configuration parameters, required or otherwise.
 
 <pre>
 /**
