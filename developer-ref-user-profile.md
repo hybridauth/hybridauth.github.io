@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "User's profile"
-description: "Describes how to retrieve users profiles in standardized structure across all the social networks."
+description: "Describes how to retrieve user profiles in standardized structure across all the social networks."
 ---
 
 User's profile
@@ -39,19 +39,19 @@ Field Name    | Type     | Short description
 ------------- | ---------| -------------------------------------------------------
 identifier    | String   | The Unique user's ID on the connected provider. Can be an integer for some providers, Email, URL, etc.
 profileURL    | String   | URL link to profile page on the IDp web site
-webSiteURL    | String   | User website, blog, web page,
-photoURL      | String   | URL link to user photo or avatar
-displayName   | String   | User dispalyName provided by the IDp or a concatenation of first and last name.
-description   | String   | A short about_me
+webSiteURL    | String   | User's website, blog, web page,
+photoURL      | String   | URL link to user's photo or avatar
+displayName   | String   | User's display name provided by the IDp or a concatenation of first and last name.
+description   | String   | A short about-me
 firstName     | String   | User's first name
 lastName      | String   | User's last name
 gender        | String   | User's gender. Values are 'female', 'male' or NULL
 language      | String   | User's language
-age           | Integer  | User' age, note that we don't calculate it. We return it as it is.
+age           | Integer  | User's age, note that we don't calculate it. We return it as it is.
 birthDay      | Integer  | The day in the month in which the person was born.
 birthMonth    | Integer  | The month in which the person was born.
 birthYear     | Integer  | The year in which the person was born.
-email         | String   | User email. Not all of IDp grant access to the user email
+email         | String   | User's email. Not all of IDp grant access to the user email
 emailVerified | String   | Verified user email. Note: not all of IDp grant access to verified user email.
 phone         | String   | User's phone number
 address       | String   | User's address
@@ -60,3 +60,5 @@ region        | String   | User's state or region
 city          | String   | User's city
 zip           | Integer  | Postal code or zipcode.
 data          | Array    | An extra data which is related to the user (e.g followers).
+
+(IDp stands for ID Provider)
