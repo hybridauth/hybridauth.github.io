@@ -7,7 +7,7 @@ description: "Contains introductory examples of how to use Hybridauth to sign in
 Introduction & Basic Usage
 ==========================
 
-{% include callout.html content="This section assume you've already installed Hybridauth 3 in your project and successfully integrated the appropriate autoloader in your script to auto-detect the proper location of Hybridauth source code to load all the required classes automatically. If not, you may want to head back to [Installation](install.html)." type="primary" %} 
+{% include callout.html content="This section assumes you've already installed Hybridauth 3 in your project and successfully integrated the appropriate autoloader in your script to auto-detect the proper location of Hybridauth source code to load all the required classes automatically. If not, you may want to head back to [Installation](install.html)." type="primary" %}
 
 ### Introduction
 
