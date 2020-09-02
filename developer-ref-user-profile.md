@@ -59,6 +59,6 @@ country       | String   | User's country
 region        | String   | User's state or region 
 city          | String   | User's city
 zip           | Integer  | Postal code or zipcode.
-data          | Array    | An extra data which is related to the user (e.g followers).
+data          | Array    | Any extra data which is related to the user (e.g followers).
 
 (IDp stands for ID Provider)
