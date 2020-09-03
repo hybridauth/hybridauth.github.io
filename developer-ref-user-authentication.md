@@ -118,8 +118,12 @@ $adapter = new Hybridauth\Provider\Google($config);
 /**
 * 3. Sign in a user with Google
 *
-* Hybridauth will attempt to negotiate with the Google api and authenticate the user. If for whatever reason the process fails,
-* Hybridauth will then throw an exception.
+* Hybridauth will attempt to negotiate with the Google api and authenticate the user.
+* This call will basically do one of 3 things...
+* 1) Redirect (with exit) away to show an authentication screen for a provider (e.g. Facebook's OAuth confirmation page)
+* 2) Finalize an incoming authentication and store access data in a session
+* 3) Confirm a session exists and do nothing
+* If for whatever reason the process fails, Hybridauth will then throw an exception.
 *
 * Note that if the user is already authenticated, then any subsequent call to this method will be ignored.
 */
