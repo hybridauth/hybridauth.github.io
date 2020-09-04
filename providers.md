@@ -24,6 +24,7 @@ The table below lists the social networks and identity providers currently suppo
 |       Discord       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Disqus       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Dribbble      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
+|       Dropbox       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Facebook      | OAuth2 |       [X]      |       [X]      |       [X]       |               |           [X]          |
 |      Foursquare     | OAuth2 |       [X]      |       [X]      |       [X]       |               |                        |
 |        GitHub       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
