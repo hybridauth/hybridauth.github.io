@@ -57,7 +57,7 @@ try {
     //Inspect profile's public attributes
     var_dump($userProfile);
 
-    //Disconnect the adapter 
+    //Disconnect the adapter (log out)
     $adapter->disconnect();
 }
 catch(\Exception $e){
@@ -112,7 +112,7 @@ try{
     //Inspect profile's public attributes
     var_dump($userProfile);
 
-    //Disconnect the adapter 
+    //Disconnect the adapter (log out)
     $adapter->disconnect();
 }
 catch(\Exception $e){
