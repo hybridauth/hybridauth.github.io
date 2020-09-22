@@ -145,3 +145,45 @@ $array = $hybridauth->getConnectedProviders();
 //Disconnect all currently connected adapters
 $hybridauth->disconnectAllAdapters();
 </pre>
+
+### Storage Model
+
+Hybridauth implements a storage model which is used for 3 things:
+1) Store data relating to an in-progress authorization flow (whatever that may be, as each provider may be radically different)
+2) Store data of a completed authorization flow, so that flow stays connected until you disconnect it (for example OAuth tokens)
+3) Any custom data you choose to save
+
+Storage is individual per website user.
+
+The default Hybridauth storage model uses PHP sessions; i.e. each PHP session stores any Hybridauth data related to the website user behind that session.
+
+This is simple and will work for most users. There is also support for creating your own storage models if you need something different (when you instatiate `Hybridauth` you can pass your own implementation of `StorageInterface`).
+
+Note that PHP sessions are, by default, session-cookie based. That means they will no longer exist once the browser window is closed which is not what you want for a typical login system. You may want to change the PHP `session.gc_maxlifetime` and `session.cookie_lifetime` settings.
+
+### State ###
+
+During an authorization flow the concept of 'state' may be important. OAuth2 in particular has a concept of state which allows passing through data in the flow, as a memory of what the user was doing.
+
+This is actually, in part, a security feature. Hybridauth will store the state an authorization flow is for, and then compare it to the state that comes back out of the authorization flow, to ensure that nothing has tampered with the flow.
+
+You may need to have some kind of state for your own purposes, in particular:
+1) What URL is a user going to be redirected to after being authorized?
+2) What provider is the user being authorized against? (if you support multiple providers on your website)
+
+It would be tempting to try and put these into the OAuth2 state and it is possible to do this in Hybridauth. However, this has two problems:
+1) It only will work for OAuth2 providers
+2) It will override Hybridauth's use of OAuth2 state as a security feature
+
+You may therefore try and implement state in the redirection URI. However, this also has big problems on some providers:
+1) Some simply do not allow complex redirection URIs, and the OAuth community discourages it
+2) Some whitelist redirection URIs and consider the query string a part of that (so, dynamic data will not be possible)
+3) Some have bugs around overly-complex redirection URIs
+You therefore should not use query strings in your redirection URIs at all.
+
+So, what's the answer? Simply store your own state within the storage model that Hybridauth provides, something like:
+
+<pre>
+$storage = $adapter->getStorage();
+$storage->set('loggingInWith', $loggingInWith);
+</pre>
