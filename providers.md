@@ -57,7 +57,6 @@ The table below lists the social networks and identity providers currently suppo
 |      WordPress      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Yandex       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Yahoo        | OAuth2 |       [X]      |       [X]      |                 |               |                        |
-|     YahooOpenID     | OpenID |       [X]      |       [X]      |                 |               |                        |
 |         QQ          | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 
 {% include callout.html content="Some providers such as Google and Yahoo may use multiple protocols for their APIs and as naming convention we append the protocol's name to the adapter's (Often the case with OpenID adapters as those might be subject to removal by providers in near future due to deprecation of the OpenID protocol)." type="default" %}
