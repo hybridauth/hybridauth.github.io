@@ -57,7 +57,7 @@ $facebook->authenticate();
 // Update the user status.
 $facebook->setUserStatus([
     'message' => 'Hello world!',
-    'link'    => 'https://example.com/link/to/page',
+    'link' => 'https://example.com/link/to/page',
 ]);
 </pre>
 

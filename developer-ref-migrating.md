@@ -29,12 +29,12 @@ $config = [
         'Twitter' => [
             'enabled' => true,
             'keys' => [
-                'key'    => '...',
+                'key' => '...',
                 'secret' => '...',
             ],
         ],
-        'Google'   => ['enabled' => true, 'keys' => ['id'  => '...', 'secret' => '...']],
-        'Facebook' => ['enabled' => true, 'keys' => ['id'  => '...', 'secret' => '...']],
+        'Google' => ['enabled' => true, 'keys' => ['id' => '...', 'secret' => '...']],
+        'Facebook' => ['enabled' => true, 'keys' => ['id' => '...', 'secret' => '...']],
     ],
 ];
 </pre>
@@ -52,12 +52,12 @@ $config = [
         'Twitter' => [
             'enabled' => true,
             'keys' => [
-                'key'    => '...',
+                'key' => '...',
                 'secret' => '...',
             ],
         ],
-        'Google'   => ['enabled' => true, 'keys' => ['id'  => '...', 'secret' => '...']],
-        'Facebook' => ['enabled' => true, 'keys' => ['id'  => '...', 'secret' => '...']],
+        'Google' => ['enabled' => true, 'keys' => ['id' => '...', 'secret' => '...']],
+        'Facebook' => ['enabled' => true, 'keys' => ['id' => '...', 'secret' => '...']],
     ],
 ];
 </pre>
@@ -101,11 +101,11 @@ $userProfile = $adapter->getUserProfile();
 $hybridauth = new Hybrid_Auth($config);
 $adapter = $hybridauth->authenticate('GitHub');
 
-//Access GitHub API to retrieve the user's public gists.
-//See: https://developer.github.com/v3/gists/
+// Access GitHub API to retrieve the user's public gists.
+// See: https://developer.github.com/v3/gists/
 $apiResponse = $adapter->api()->get('gists'); // or absolute url: https://api.github.com/gists
 
-//Inspect API's response.
+// Inspect API's response.
 var_dump($apiResponse);
 </pre>
 
@@ -116,11 +116,11 @@ var_dump($apiResponse);
 $hybridauth = new Hybridauth\Hybridauth($config);
 $adapter = $hybridauth->authenticate('GitHub');
 
-//Access GitHub API to retrieve the user's public gists.
-//See: https://developer.github.com/v3/gists/
+// Access GitHub API to retrieve the user's public gists.
+// See: https://developer.github.com/v3/gists/
 $apiResponse = $adapter->apiRequest('gists'); // or absolute url: https://api.github.com/gists
 
-//Inspect API's response.
+// Inspect API's response.
 var_dump($apiResponse);
 </pre>
 

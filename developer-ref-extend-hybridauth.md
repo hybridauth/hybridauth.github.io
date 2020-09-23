@@ -67,9 +67,9 @@ final class MyCustomProvider extends OAuth2
 
         /* optional: determine how exchange Authorization Code with an Access Token */
         $this->tokenExchangeParameters = [
-            'client_id'     => $this->clientId,
-            'grant_type'    => 'authorization_code',
-            'redirect_uri'  => $this->endpoint
+            'client_id' => $this->clientId,
+            'grant_type' => 'authorization_code',
+            'redirect_uri' => $this->endpoint
         ];
         $this->tokenExchangeMethod  = 'POST';
         $this->tokenExchangeHeaders = ['Authorization' => 'Basic ' . base64_encode($this->clientId .  ':' . $this->clientSecret)];

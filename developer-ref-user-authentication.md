@@ -39,8 +39,8 @@ $config = [
      * these you'll have to register an application on provider's site. In the case of Google for instance you can refer to
      * https://support.google.com/cloud/answer/6158849
      */
-    'keys' => [ 
-        'id'     => 'your-google-client-id',
+    'keys' => [
+        'id' => 'your-google-client-id',
         'secret' => 'your-google-client-secret' 
     ],
 
@@ -73,10 +73,10 @@ $config = [
     */
     'authorize_url_parameters' => [
         'approval_prompt' => 'force',
-        'access_type'     => 'offline',
-        'hd'              => ..,
-        'state'           => ..,
-        //And so on.
+        'access_type' => 'offline',
+        'hd' => ..,
+        'state' => ..,
+        // And so on.
     ],
 
     /**
@@ -96,17 +96,17 @@ $config = [
      * For more information, refer to: http://www.php.net/manual/function.curl-setopt.php
      */
     'curl_options' => [
-        //Set a custom certificate
+        // Set a custom certificate
         CURLOPT_SSL_VERIFYPEER => true,
-        CURLOPT_CAINFO         => '/path/to/your/certificate.crt',
+        CURLOPT_CAINFO => '/path/to/your/certificate.crt',
 
-        //Set a valid proxy address
-        CURLOPT_PROXY          => '8.8.8.8',
+        // Set a valid proxy address
+        CURLOPT_PROXY => '8.8.8.8',
 
-        //Set a custom user agent
-        CURLOPT_USERAGENT      => 'User Agent String'
+        // Set a custom user agent
+        CURLOPT_USERAGENT => 'User Agent String'
         
-        //And so on.
+        // And so on.
     ]
 ];
 
@@ -155,14 +155,14 @@ Authenticating a user using access tokens is a similar to normal way of signing 
 */
 $config = [
     /**
-    * Location where to redirect users once they authenticate with Google
-    */
+     * Location where to redirect users once they authenticate with Google
+     */
     'callback' => 'http://localhost/path/to/this/script.php',
 
     /**
-    * Your Google application credentials
-    */
-    'keys' => [ 'id' => 'your-google-client-id', 'secret' => 'your-google-client-secret' ],
+     * Your Google application credentials
+     */
+    'keys' => ['id' => 'your-google-client-id', 'secret' => 'your-google-client-secret'],
 ];
 
 /**
