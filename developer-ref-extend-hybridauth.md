@@ -71,12 +71,12 @@ final class MyCustomProvider extends OAuth2
             'grant_type' => 'authorization_code',
             'redirect_uri' => $this->endpoint
         ];
-        $this->tokenExchangeMethod  = 'POST';
+        $this->tokenExchangeMethod = 'POST';
         $this->tokenExchangeHeaders = ['Authorization' => 'Basic ' . base64_encode($this->clientId .  ':' . $this->clientSecret)];
 
         /* optional: add any extra parameters or headers when sending signed requests */
         $this->apiRequestParameters = ['access_token' => $this->token('access_token')];
-        $this->apiRequestHeaders    = ['Authorization' => 'Bearer ' . $this->token('access_token')];
+        $this->apiRequestHeaders = ['Authorization' => 'Bearer ' . $this->token('access_token')];
     } 
 
     function getUserProfile()
@@ -166,18 +166,18 @@ final class MyCustomProvider extends OAuth1
         parent::initialize();
 
         /* optional: define a how request Unauthorized OAuth Token */
-        $this->requestTokenMethod     = 'GET'; 
+        $this->requestTokenMethod = 'GET'; 
         $this->requestTokenParameters = [ .. ];
-        $this->requestTokenHeaders    = [ .. ]; 
+        $this->requestTokenHeaders = [ .. ]; 
 
         /* optional: determine how the exchange Unauthorized OAuth Token with an Access Token */
-        $this->tokenExchangeMethod     = 'POST'; 
+        $this->tokenExchangeMethod = 'POST'; 
         $this->tokenExchangeParameters = [ .. ]; 
-        $this->tokenExchangeHeaders    = [ .. ];
+        $this->tokenExchangeHeaders = [ .. ];
 
         /* optional: add any extra parameters or headers when sending signed requests */
         $this->apiRequestParameters = ['access_token' => $this->token('access_token')];
-        $this->apiRequestHeaders    = ['Accept-Encoding' => 'compress, gzip'];
+        $this->apiRequestHeaders = ['Accept-Encoding' => 'compress, gzip'];
     }
 
     //..
