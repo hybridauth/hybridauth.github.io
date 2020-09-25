@@ -31,17 +31,17 @@ Parameter     | Type   | Description
 Below is a simple example of how to access GitHub's API.
 
 <pre>
-//Instantiate GitHub's adapter
+// Instantiate GitHub's adapter
 $github = new Hybridauth\Provider\GitHub($config);
 
-//Authenticate the user
+// Authenticate the user
 $github->authenticate();
 
-//Access GitHub API to retrieve the user's public gists.
-//See: https://developer.github.com/v3/gists/
+// Access GitHub API to retrieve the user's public gists.
+// See: https://developer.github.com/v3/gists/
 $apiResponse = $github->apiRequest('gists'); // or absolute url: https://api.github.com/gists
 
-//Inspect API's response.
+// Inspect API's response.
 var_dump($apiResponse);
 </pre>
 
@@ -50,17 +50,17 @@ var_dump($apiResponse);
 Another simple example of how to access Twitter's API.
 
 <pre>
-//Instantiate Twitter's adapter
+// Instantiate Twitter's adapter
 $twitter = new Hybridauth\Provider\Twitter($config);
 
-//Authenticate the user
+// Authenticate the user
 $twitter->authenticate();
 
-//Access Twitter's API to post a status update
-//See: https://dev.twitter.com/rest/reference/post/statuses/update
+// Access Twitter's API to post a status update
+// See: https://dev.twitter.com/rest/reference/post/statuses/update
 $apiResponse = $twitter->apiRequest('statuses/update.json', 'POST', ['status' => 'This is tests!']);
 
-//Inspect API's response.
+// Inspect API's response.
 var_dump($apiResponse);
 </pre>
 
@@ -69,25 +69,25 @@ var_dump($apiResponse);
 Below is an example for uploading a video to a Facebook Page.
 
 <pre>
-//Instantiate Facebook's adapter
+// Instantiate Facebook's adapter
 $facebook = new Hybridauth\Provider\Facebook($config);
 
-//Authenticate the user
+// Authenticate the user
 $facebook->authenticate();
 
-//Access Facebook's API to post a video
-//See: https://developers.facebook.com/docs/graph-api/video-uploads/
+// Access Facebook's API to post a video
+// See: https://developers.facebook.com/docs/graph-api/video-uploads/
 $facebook->apiRequest('https://graph-video.facebook.com/PAGE_ID/videos',
                       'POST',
                       [
-                          'title'       => $videoTitle,
+                          'title' => $videoTitle,
                           'description' => $videoDescription,
-                          'source'      => new \CURLFile($videoPath),
+                          'source' => new \CURLFile($videoPath),
                       ],
                       [],
                       true
 );
 
-//Inspect API's response.
+// Inspect API's response.
 var_dump($apiResponse); 
 </pre>

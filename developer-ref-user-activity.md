@@ -16,16 +16,16 @@ To know more about providers capabilities, refer to [Supported Providers](provid
 **Usage :**
 
 <pre>
-//Instantiate Twitter Adapter
+// Instantiate Twitter Adapter
 $twitter = new Hybridauth\Provider\Twitter($config);
 
-//Sign in with twitter.
+// Sign in with twitter.
 $twitter->authenticate();
 
-//Retrieve User's latest tweets.
-$timeline = $adapter->getUserActivity('me'); //Returns an array of Hybridauth\User\Activity objects.
+// Retrieve User's latest tweets.
+$timeline = $adapter->getUserActivity('me'); // Returns an array of Hybridauth\User\Activity objects.
 
-//Iterate over the user's timeline.
+// Iterate over the user's timeline.
 foreach ($timeline as $item) {
     echo $item->user->displayName . ': ' . $item->text . "\n";
 }

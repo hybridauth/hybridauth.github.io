@@ -28,36 +28,36 @@ First step is to build a configuration array containing your Facebook applicatio
 {% include note.html content="This assumes you have already created and configured a Facebook application, which you can obtain from their [App Dashboard](https://developers.facebook.com/apps)." %} 
 
 <pre>
-//Build configuration array
+// Build configuration array
 $config = [
-    //Location where to redirect users once they authenticate with Facebook
-    //For this example we choose to come back to this same script
+    // Location where to redirect users once they authenticate with Facebook
+    // For this example we choose to come back to this same script
     'callback' => 'https://example.com/path/to/this/script.php',
 
-    //Facebook application credentials
+    // Facebook application credentials
     'keys' => [
-        'id'     => '...', //Required: your Facebook application id
-        'secret' => '...'  //Required: your Facebook application secret 
+        'id' => '...', // Required: your Facebook application id
+        'secret' => '...'  // Required: your Facebook application secret 
     ]
 ];
 
 try {
-    //Instantiate Facebook's adapter directly
+    // Instantiate Facebook's adapter directly
     $adapter = new Hybridauth\Provider\Facebook($config);
 
-    //Attempt to authenticate the user with Facebook
+    // Attempt to authenticate the user with Facebook
     $adapter->authenticate();
 
-    //Returns a boolean of whether the user is connected with Facebook
+    // Returns a boolean of whether the user is connected with Facebook
     $isConnected = $adapter->isConnected();
  
-    //Retrieve the user's profile
+    // Retrieve the user's profile
     $userProfile = $adapter->getUserProfile();
 
-    //Inspect profile's public attributes
+    // Inspect profile's public attributes
     var_dump($userProfile);
 
-    //Disconnect the adapter (log out)
+    // Disconnect the adapter (log out)
     $adapter->disconnect();
 }
 catch(\Exception $e){
@@ -70,49 +70,49 @@ catch(\Exception $e){
 For ease of use of multiple providers, Hybridauth implements the class `Hybridauth\Hybridauth`, a sort of factory/façade which acts as an unified interface or entry point, and it expects a configuration array containing the list of providers you want to use, their respective credentials and authorized callback.
 
 <pre>
-//First step is to build a configuration array to pass to `Hybridauth\Hybridauth`
+// First step is to build a configuration array to pass to `Hybridauth\Hybridauth`
 $config = [
-    //Location where to redirect users once they authenticate with a provider
+    // Location where to redirect users once they authenticate with a provider
     'callback' => 'https://example.com/path/to/this/script.php',
 
-    //Providers specifics
+    // Providers specifics
     'providers' => [
-        'Twitter' => [ 
-            'enabled' => true,     //Optional: indicates whether to enable or disable Twitter adapter. Defaults to false
-            'keys' => [ 
-                'key'    => '...', //Required: your Twitter consumer key
-                'secret' => '...'  //Required: your Twitter consumer secret
+        'Twitter' => [
+            'enabled' => true,     // Optional: indicates whether to enable or disable Twitter adapter. Defaults to false
+            'keys' => [
+                'key' => '...', // Required: your Twitter consumer key
+                'secret' => '...'  // Required: your Twitter consumer secret
             ]
         ],
-        'Google'   => ['enabled' => true, 'keys' => [ 'id'  => '...', 'secret' => '...']], //To populate in a similar way to Twitter
-        'Facebook' => ['enabled' => true, 'keys' => [ 'id'  => '...', 'secret' => '...']]  //And so on
+        'Google' => ['enabled' => true, 'keys' => ['id' => '...', 'secret' => '...']], // To populate in a similar way to Twitter
+        'Facebook' => ['enabled' => true, 'keys' => ['id' => '...', 'secret' => '...']]  // And so on
     ]
 ];
 
 try{
-    //Feed configuration array to Hybridauth
+    // Feed configuration array to Hybridauth
     $hybridauth = new Hybridauth\Hybridauth($config);
 
-    //Then we can proceed and sign in with Twitter as an example. If you want to use a diffirent provider, 
-    //simply replace 'Twitter' with 'Google' or 'Facebook'.
+    // Then we can proceed and sign in with Twitter as an example. If you want to use a diffirent provider, 
+    // simply replace 'Twitter' with 'Google' or 'Facebook'.
 
-    //Attempt to authenticate users with a provider by name
-    //This call will basically do one of 3 things...
-    //1) Redirect away (with exit) to show an authentication screen for a provider (e.g. Facebook's OAuth confirmation page)
-    //2) Finalize an incoming authentication and store access data in a session
-    //3) Confirm a session exists and do nothing
+    // Attempt to authenticate users with a provider by name
+    // This call will basically do one of 3 things...
+    // 1) Redirect away (with exit) to show an authentication screen for a provider (e.g. Facebook's OAuth confirmation page)
+    // 2) Finalize an incoming authentication and store access data in a session
+    // 3) Confirm a session exists and do nothing
     $adapter = $hybridauth->authenticate('Twitter'); 
 
-    //Returns a boolean of whether the user is connected with Twitter
+    // Returns a boolean of whether the user is connected with Twitter
     $isConnected = $adapter->isConnected();
  
-    //Retrieve the user's profile
+    // Retrieve the user's profile
     $userProfile = $adapter->getUserProfile();
 
-    //Inspect profile's public attributes
+    // Inspect profile's public attributes
     var_dump($userProfile);
 
-    //Disconnect the adapter (log out)
+    // Disconnect the adapter (log out)
     $adapter->disconnect();
 }
 catch(\Exception $e){
@@ -127,22 +127,22 @@ As noted above, the class `Hybridauth\Hybridauth` provides a number of extra met
 **Examples:**
 
 <pre>
-//Retrieve back the configuration used for provider by name
+// Retrieve back the configuration used for provider by name
 $array = $hybridauth->getProviderConfig('Twitter');
 
-//Returns a boolean of whether the user is connected with a provider by name
+// Returns a boolean of whether the user is connected with a provider by name
 $boolean = $hybridauth->isConnectedWith('Google');
 
-//Returns a new instance of a provider's adapter by name
+// Returns a new instance of a provider's adapter by name
 $adapter = $hybridauth->getAdapter('Facebook');
 
-//Returns a list of new instances of currently connected adapters
+// Returns a list of new instances of currently connected adapters
 $array = $hybridauth->getConnectedAdapters();
 
-//Returns a list of currently connected adapters names
+// Returns a list of currently connected adapters names
 $array = $hybridauth->getConnectedProviders();
 
-//Disconnect all currently connected adapters
+// Disconnect all currently connected adapters
 $hybridauth->disconnectAllAdapters();
 </pre>
 
