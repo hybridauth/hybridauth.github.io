@@ -80,7 +80,7 @@ in the configuration.
 If a scope is defined, Apple **always** sends the `code` value as a **POST** request (Facebook and Google return the code as a query parameter).
 
 ### FAQs / reasons for authentication failures
-* Missing first/last/display name in getUserProfile(): Apple sends this information only on the very first time the user authorizes the app (see https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/configuring_your_webpage_for_sign_in_with_apple), so you have only one change to save this information. To receive this data for a second time, you have to revoke your authorization first: https://stackoverflow.com/questions/58018184/how-to-revoke-sign-in-with-apple-credentials-for-a-specific-app
+* Missing first/last/display name in getUserProfile(): Apple sends this information only on the very first time the user authorizes the app (see https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/configuring_your_webpage_for_sign_in_with_apple), so you have only one chance to save this information. To receive this data for a second time, you have to revoke your authorization first: https://stackoverflow.com/questions/58018184/how-to-revoke-sign-in-with-apple-credentials-for-a-specific-app
 * Have the right id (= Service ID, usually in reverse domain name notation e.g. "org.foo.bar"), team id, key id and the full path to your private key file configured.
 * Make sure you have your domain(s) configured correctly in your Service ID.
 * Your server must have the time set correctly (use ntpdate), otherwise signature validation might fail
