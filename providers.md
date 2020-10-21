@@ -35,6 +35,7 @@ The table below lists the social networks and identity providers currently suppo
 |      Instagram      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       LinkedIn      | OAuth2 |       [X]      |       [X]      |                 |      [X]      |                        |
 |        Mailru       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
+|        Medium       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |    MicrosoftGraph   | OAuth2 |       [X]      |       [X]      |       [X]       |               |                        |
 |    Odnoklassniki    | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        OpenID       | OpenID |       [X]      |       [X]      |                 |               |                        |
