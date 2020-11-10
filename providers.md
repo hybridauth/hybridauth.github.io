@@ -21,6 +21,7 @@ The table below lists the social networks and identity providers currently suppo
 |        Amazon       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |      AOLOpenID      | OpenID |       [X]      |       [X]      |                 |               |                        |
 |      Authentiq      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
+|      AutoDesk       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |      BitBucket      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Blizzard      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Discord       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
