@@ -8,6 +8,9 @@ Apple
 ==========================
 
 ## Dependencies
+
+The Apple provider class requires the composer packages [`firebase/php-jwt`](https://github.com/firebase/php-jwt) and [`phpseclib/phpseclib`](https://github.com/phpseclib/phpseclib). Please ensure these packages are installed.
+
 - `composer require firebase/php-jwt`
 - `composer require phpseclib/phpseclib`
 
