@@ -34,6 +34,7 @@ The table below lists the social networks and identity providers currently suppo
 |        GitLab       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Google       | OAuth2 |       [X]      |       [X]      |       [X]       |               |                        |
 |      Instagram      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
+|       Keycloak      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       LinkedIn      | OAuth2 |       [X]      |       [X]      |                 |      [X]      |                        |
 |        Mailru       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Medium       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
