@@ -36,10 +36,8 @@ The table below lists the social networks and identity providers currently suppo
 |      Instagram      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Keycloak      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       LinkedIn      | OAuth2 |       [X]      |       [X]      |                 |      [X]      |                        |
-|        Mailru       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Medium       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |    MicrosoftGraph   | OAuth2 |       [X]      |       [X]      |       [X]       |               |                        |
-|    Odnoklassniki    | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        OpenID       | OpenID |       [X]      |       [X]      |                 |               |                        |
 |        ORCID        | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Paypal       | OpenID |       [X]      |       [X]      |                 |               |                        |
@@ -56,11 +54,9 @@ The table below lists the social networks and identity providers currently suppo
 |        Tumblr       | OAuth1 |       [X]      |       [X]      |       [X]       |      [X]      |                        |
 |       TwitchTV      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Twitter       | OAuth1 |       [X]      |       [X]      |       [X]       |      [X]      |           [X]          |
-|      Vkontakte      | OAuth2 |       [X]      |       [X]      |       [X]       |               |                        |
 |        WeChat       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |     WindowsLive     | OAuth2 |       [X]      |       [X]      |       [X]       |               |                        |
 |      WordPress      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
-|        Yandex       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Yahoo        | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |         QQ          | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 
