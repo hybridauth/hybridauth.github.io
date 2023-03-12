@@ -36,6 +36,7 @@ The table below lists the social networks and identity providers currently suppo
 |      Instagram      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Keycloak      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       LinkedIn      | OAuth2 |       [X]      |       [X]      |                 |      [X]      |                        |
+|       Mastodon      | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Medium       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |    MicrosoftGraph   | OAuth2 |       [X]      |       [X]      |       [X]       |               |                        |
 |        OpenID       | OpenID |       [X]      |       [X]      |                 |               |                        |
@@ -48,6 +49,7 @@ The table below lists the social networks and identity providers currently suppo
 |    StackExchange    | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 | StackExchangeOpenID | OpenID |       [X]      |       [X]      |                 |               |                        |
 |        Steam        | Hybrid |       [X]      |       [X]      |                 |               |                        |
+|        Seznam       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |        Strava       | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |     SteemConnect    | OAuth2 |       [X]      |       [X]      |                 |               |                        |
 |       Telegram      | Hybrid |       [X]      |       [X]      |                 |               |                        |
