@@ -93,7 +93,7 @@ try{
     // Feed configuration array to Hybridauth
     $hybridauth = new Hybridauth\Hybridauth($config);
 
-    // Then we can proceed and sign in with Twitter as an example. If you want to use a diffirent provider, 
+    // Then we can proceed and sign in with Twitter as an example. If you want to use a different provider, 
     // simply replace 'Twitter' with 'Google' or 'Facebook'.
 
     // Attempt to authenticate users with a provider by name
